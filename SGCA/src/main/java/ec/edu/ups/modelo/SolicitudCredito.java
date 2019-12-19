@@ -12,7 +12,7 @@ import java.util.Date;
  * @author ISMAEL
  */
 public class SolicitudCredito {
-    
+
     private int codigo;
     private Double egresos;
     private String estado;
@@ -21,7 +21,10 @@ public class SolicitudCredito {
     private Double ingresos;
     private String proposito;
     private String tipo;
-    
+
+    public SolicitudCredito() {
+    }
+
     public SolicitudCredito(int codigo, Double egresos, String estado, Date fechaRegistro, String garantia, Double ingresos, String proposito, String tipo) {
         this.codigo = codigo;
         this.egresos = egresos;
@@ -96,5 +99,5 @@ public class SolicitudCredito {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    
+
 }
