@@ -12,7 +12,7 @@ import java.util.Date;
  * @author ISMAEL
  */
 public class DetalleCredito {
-    
+
     private int codigo;
     private Double capital;
     private Date fechaPago;
@@ -23,6 +23,9 @@ public class DetalleCredito {
     private int numeroCuota;
     private int numeroDiasMora;
     private Double saldoCapital;
+
+    public DetalleCredito() {
+    }
 
     public DetalleCredito(int codigo, Double capital, Date fechaPago, Double interes, Double cuota, Date fechaCaducidad, Double montoMora, int numeroCuota, int numeroDiasMora, Double saldoCapital) {
         this.codigo = codigo;
@@ -116,6 +119,5 @@ public class DetalleCredito {
     public void setSaldoCapital(Double saldoCapital) {
         this.saldoCapital = saldoCapital;
     }
-    
-    
+
 }
