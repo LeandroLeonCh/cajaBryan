@@ -10,5 +10,7 @@ package ec.edu.ups.controlador;
  * @author USER
  */
 public class CuentaController {
-    
+    public void crearCuenta(){
+        
+    }
 }
