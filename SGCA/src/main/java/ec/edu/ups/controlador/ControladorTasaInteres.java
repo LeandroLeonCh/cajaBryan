@@ -13,7 +13,7 @@ import java.util.Set;
  *
  * @author ISMAEL
  */
-public class ControladorInteres {
+public class ControladorTasaInteres {
     
     private Set<TasaInteres> listTasaInteres;
 
