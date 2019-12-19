@@ -14,15 +14,15 @@ import java.util.Set;
  * @author ISMAEL
  */
 public class ControladorTasaInteres {
-    
+
     private Set<TasaInteres> listTasaInteres;
 
     public void crear(TasaInteres tasaInteres) {
         tasaInteres.setCodigo(listTasaInteres.size() + 1);
         listTasaInteres.add(tasaInteres);
     }
-    
-     public TasaInteres buscar(int codigo) {
+
+    public TasaInteres buscar(int codigo) {
         for (TasaInteres tasaInteres : listTasaInteres) {
             if (tasaInteres.getCodigo() == codigo) {
                 return tasaInteres;
@@ -30,8 +30,8 @@ public class ControladorTasaInteres {
         }
         return null;
     }
-     
-     public boolean eliminar(int codigo) {
+
+    public boolean eliminar(int codigo) {
         TasaInteres tasaInteres = buscar(codigo);
         if (tasaInteres != null) {
             return listTasaInteres.remove(tasaInteres);
@@ -56,7 +56,5 @@ public class ControladorTasaInteres {
     public void setListTasaInteres(Set<TasaInteres> listTasaInteres) {
         this.listTasaInteres = listTasaInteres;
     }
-    
-    
-    
+
 }
