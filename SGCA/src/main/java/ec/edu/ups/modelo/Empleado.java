@@ -11,8 +11,8 @@ import java.util.Date;
  *
  * @author Starman
  */
-public class Empleado extends Persona{
-    
+public class Empleado extends Persona {
+
     private String cargo;
     private String estado;
     private Date fechaIngreso;
@@ -21,8 +21,8 @@ public class Empleado extends Persona{
     public Empleado() {
     }
 
-    public Empleado(String cargo, String estado, Date fechaIngreso, double sueldo, int codigo, String nombre, String apellido, Date fechaNacimiento, String telefono, String correo) {
-        super(codigo, nombre, apellido, fechaNacimiento, telefono, correo);
+    public Empleado(String cargo, String estado, Date fechaIngreso, double sueldo, int pCodigo, String pCedula, String pNombre, String pApellido, Date pFechaNacimiento, String pTelefono, String pDireccion) {
+        super(pCodigo, pCedula, pNombre, pApellido, pFechaNacimiento, pTelefono, pDireccion);
         this.cargo = cargo;
         this.estado = estado;
         this.fechaIngreso = fechaIngreso;
@@ -60,9 +60,5 @@ public class Empleado extends Persona{
     public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
     }
-    
-    
-    
-    
-    
+
 }
