@@ -13,7 +13,7 @@ import java.util.Set;
  *
  * @author Starman
  */
-public class ControladorAgencia {
+public class AgenciaController {
 
     private Set<Agencia> ListaAgencia;
 
