@@ -20,9 +20,13 @@ public class Credito {
     private Double monto;
     private int tiempo;
     private Double tipoEntrega;
-   
+    private Socio socio;
+    private TasaInteres tasaInteres;
 
-    public Credito(int codigo, String detalle, Date fechaInicio, Date fechaFin, Double monto, int tiempo, Double tipoEntrega) {
+    public Credito() {
+    }
+
+    public Credito(int codigo, String detalle, Date fechaInicio, Date fechaFin, Double monto, int tiempo, Double tipoEntrega, Socio socio, TasaInteres tasaInteres) {
         this.codigo = codigo;
         this.detalle = detalle;
         this.fechaInicio = fechaInicio;
@@ -30,7 +34,8 @@ public class Credito {
         this.monto = monto;
         this.tiempo = tiempo;
         this.tipoEntrega = tipoEntrega;
-        
+        this.socio = socio;
+        this.tasaInteres = tasaInteres;
     }
 
     public int getCodigo() {
@@ -89,6 +94,24 @@ public class Credito {
         this.tipoEntrega = tipoEntrega;
     }
 
+    public Socio getSocio() {
+        return socio;
+    }
+
+    public void setSocio(Socio socio) {
+        this.socio = socio;
+    }
+
+    public TasaInteres getTasaInteres() {
+        return tasaInteres;
+    }
+
+    public void setTasaInteres(TasaInteres tasaInteres) {
+        this.tasaInteres = tasaInteres;
+    }
+   
+
+    
     
     
     

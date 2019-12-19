@@ -10,11 +10,14 @@ package ec.edu.ups.modelo;
  * @author ISMAEL
  */
 public class TasaInteres {
-    
-     private int codigo;
+
+    private int codigo;
     private String nombre;
     private String periodo;
     private Double porcentaje;
+
+    public TasaInteres() {
+    }
 
     public TasaInteres(int codigo, String nombre, String periodo, Double porcentaje) {
         this.codigo = codigo;
@@ -54,6 +57,5 @@ public class TasaInteres {
     public void setPorcentaje(Double porcentaje) {
         this.porcentaje = porcentaje;
     }
-    
-    
+
 }
