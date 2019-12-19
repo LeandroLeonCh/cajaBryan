@@ -11,7 +11,8 @@ import java.util.Date;
  *
  * @author Starman
  */
-public class Socio extends Persona{
+public class Socio extends Persona {
+
     private String estado;
     private Date fechaIngreso;
     private double monto;
@@ -19,9 +20,10 @@ public class Socio extends Persona{
     public Socio() {
     }
 
-    public Socio(String estado, double monto, int codigo, String nombre, String apellido, Date fechaNacimiento, String telefono, String correo) {
-        super(codigo, nombre, apellido, fechaNacimiento, telefono, correo);
+    public Socio(String estado, Date fechaIngreso, double monto, int pCodigo, String pCedula, String pNombre, String pApellido, Date pFechaNacimiento, String pTelefono, String pDireccion) {
+        super(pCodigo, pCedula, pNombre, pApellido, pFechaNacimiento, pTelefono, pDireccion);
         this.estado = estado;
+        this.fechaIngreso = fechaIngreso;
         this.monto = monto;
     }
 
@@ -48,7 +50,5 @@ public class Socio extends Persona{
     public void setMonto(double monto) {
         this.monto = monto;
     }
-    
-    
-    
+
 }
