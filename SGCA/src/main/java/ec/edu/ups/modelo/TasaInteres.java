@@ -11,7 +11,7 @@ package ec.edu.ups.modelo;
  */
 public class TasaInteres {
     
-     private int codigo;
+    private int codigo;
     private String nombre;
     private String periodo;
     private Double porcentaje;

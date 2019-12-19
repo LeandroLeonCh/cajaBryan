@@ -22,4 +22,13 @@ public class ControladorInteres {
         listTasaInteres.add(tasaInteres);
     }
     
+     public TasaInteres buscar(int codigo) {
+        for (TasaInteres tasaInteres : listTasaInteres) {
+            if (tasaInteres.getCodigo() == codigo) {
+                return tasaInteres;
+            }
+        }
+        return null;
+    }
+    
 }
