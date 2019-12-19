@@ -5,8 +5,8 @@
  */
 package ec.edu.ups.controlador;
 
-import ec.edu.ups.modelo.Credito;
 import ec.edu.ups.modelo.TasaInteres;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -30,5 +30,33 @@ public class ControladorTasaInteres {
         }
         return null;
     }
+     
+     public boolean eliminar(int codigo) {
+        TasaInteres tasaInteres = buscar(codigo);
+        if (tasaInteres != null) {
+            return listTasaInteres.remove(tasaInteres);
+        }
+        return false;
+    }
+
+    public void actualizar(TasaInteres tasaInteres) {
+        for (Iterator<TasaInteres> iterator = listTasaInteres.iterator(); iterator.hasNext();) {
+            TasaInteres nuevaTasaInteres = iterator.next();
+            if (tasaInteres.getCodigo() == nuevaTasaInteres.getCodigo()) {
+                listTasaInteres.remove(tasaInteres);
+                listTasaInteres.add(nuevaTasaInteres);
+            }
+        }
+    }
+
+    public Set<TasaInteres> getListTasaInteres() {
+        return listTasaInteres;
+    }
+
+    public void setListTasaInteres(Set<TasaInteres> listTasaInteres) {
+        this.listTasaInteres = listTasaInteres;
+    }
+    
+    
     
 }
