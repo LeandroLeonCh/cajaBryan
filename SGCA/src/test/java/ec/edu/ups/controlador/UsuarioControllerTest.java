@@ -20,22 +20,27 @@ import static org.junit.Assert.*;
  * @author Jordan
  */
 public class UsuarioControllerTest {
-    
+
+    Usuario user1 = null;
+    Usuario user2 = null;
+    UsuarioController instance = null;
+
     public UsuarioControllerTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
+        instance = new UsuarioController();
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -103,7 +108,6 @@ public class UsuarioControllerTest {
     @Test
     public void testGetListaUsuario() {
         System.out.println("getListaUsuario");
-        UsuarioController instance = new UsuarioController();
         List<Usuario> expResult = new ArrayList<>();
         List<Usuario> result = instance.getListaUsuario();
         assertEquals(expResult, result);
@@ -118,10 +122,9 @@ public class UsuarioControllerTest {
     public void testSetListaUsuario() {
         System.out.println("setListaUsuario");
         List<Usuario> ListaUsuario = null;
-        UsuarioController instance = new UsuarioController();
         instance.setListaUsuario(ListaUsuario);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
 }
