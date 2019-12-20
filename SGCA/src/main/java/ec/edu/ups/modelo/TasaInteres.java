@@ -54,6 +54,12 @@ public class TasaInteres {
     public void setPorcentaje(Double porcentaje) {
         this.porcentaje = porcentaje;
     }
+
+    @Override
+    public String toString() {
+        return "TasaInteres{" + "codigo=" + codigo + ", nombre=" + nombre + ", periodo=" + periodo + ", porcentaje=" + porcentaje + '}';
+    }
+    
     
     
 }
