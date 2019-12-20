@@ -9,6 +9,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -43,13 +45,8 @@ public class CuentaTest {
         Date fechaN = format.parse("20/04/1994");
         System.err.println(fechaN);
         Date fechaI = format.parse("10/01/2016");
-        System.err.println(fechaI);
-               
-        
-        
-        
+        System.err.println(fechaI);     
         s1 = new Socio("Activo", fechaI, 12.666, 1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja" );
-    
         c1 = new Cuenta(1, "789654321" , fecha, "Activo",s1);
         
     }
@@ -64,12 +61,11 @@ public class CuentaTest {
     @Test
     public void testGetCodigo() {
         System.out.println("getCodigo");
-        Cuenta instance = new Cuenta();
-        int expResult = 0;
-        int result = instance.getCodigo();
+        int expResult = 1;
+        int result = c1.getCodigo();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -82,7 +78,7 @@ public class CuentaTest {
         Cuenta instance = new Cuenta();
         instance.setCodigo(codigo);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -91,12 +87,11 @@ public class CuentaTest {
     @Test
     public void testGetNumeroCuenta() {
         System.out.println("getNumeroCuenta");
-        Cuenta instance = new Cuenta();
-        String expResult = "";
-        String result = instance.getNumeroCuenta();
+        String expResult = "789654321";
+        String result = c1.getNumeroCuenta();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -109,7 +104,7 @@ public class CuentaTest {
         Cuenta instance = new Cuenta();
         instance.setNumeroCuenta(numeroCuenta);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -118,12 +113,18 @@ public class CuentaTest {
     @Test
     public void testGetFechaRegistro() {
         System.out.println("getFechaRegistro");
-        Cuenta instance = new Cuenta();
+        DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un formato de fecha
         Date expResult = null;
-        Date result = instance.getFechaRegistro();
+        try {
+            expResult = format.parse("25/07/2017");
+        } catch (ParseException ex) {
+            Logger.getLogger(PersonaTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Date result = c1.getFechaRegistro();
+        System.out.println("result " + result);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -136,7 +137,7 @@ public class CuentaTest {
         Cuenta instance = new Cuenta();
         instance.setFechaRegistro(fechaRegistro);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -145,12 +146,11 @@ public class CuentaTest {
     @Test
     public void testGetEstado() {
         System.out.println("getEstado");
-        Cuenta instance = new Cuenta();
-        String expResult = "";
-        String result = instance.getEstado();
+        String expResult = "Activo";
+        String result = c1.getEstado();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -163,7 +163,7 @@ public class CuentaTest {
         Cuenta instance = new Cuenta();
         instance.setEstado(estado);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -172,12 +172,11 @@ public class CuentaTest {
     @Test
     public void testGetSocio() {
         System.out.println("getSocio");
-        Cuenta instance = new Cuenta();
-        Socio expResult = null;
-        Socio result = instance.getSocio();
+        Socio expResult = s1;
+        Socio result = c1.getSocio();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -190,7 +189,7 @@ public class CuentaTest {
         Cuenta instance = new Cuenta();
         instance.setSocio(socio);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
