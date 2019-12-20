@@ -100,4 +100,11 @@ public class SolicitudCredito {
         this.tipo = tipo;
     }
 
+    @Override
+    public String toString() {
+        return "SolicitudCredito{" + "codigo=" + codigo + ", egresos=" + egresos + ", estado=" + estado + ", fechaRegistro=" + fechaRegistro + ", garantia=" + garantia + ", ingresos=" + ingresos + ", proposito=" + proposito + ", tipo=" + tipo + '}';
+    }
+    
+    
+
 }

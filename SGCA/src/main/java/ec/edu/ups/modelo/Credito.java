@@ -6,6 +6,7 @@
 package ec.edu.ups.modelo;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -22,11 +23,14 @@ public class Credito {
     private Double tipoEntrega;
     private Socio socio;
     private TasaInteres tasaInteres;
+    private List<DetalleCredito> detalleCredito;
+    private List<SolicitudCredito> solicitudCredito;
+    
 
     public Credito() {
     }
 
-    public Credito(int codigo, String detalle, Date fechaInicio, Date fechaFin, Double monto, int tiempo, Double tipoEntrega, Socio socio, TasaInteres tasaInteres) {
+    public Credito(int codigo, String detalle, Date fechaInicio, Date fechaFin, Double monto, int tiempo, Double tipoEntrega, Socio socio, TasaInteres tasaInteres, List<DetalleCredito> detalleCredito, List<SolicitudCredito> solicitudCredito) {
         this.codigo = codigo;
         this.detalle = detalle;
         this.fechaInicio = fechaInicio;
@@ -36,6 +40,8 @@ public class Credito {
         this.tipoEntrega = tipoEntrega;
         this.socio = socio;
         this.tasaInteres = tasaInteres;
+        this.detalleCredito = detalleCredito;
+        this.solicitudCredito = solicitudCredito;
     }
 
     public int getCodigo() {
@@ -109,10 +115,28 @@ public class Credito {
     public void setTasaInteres(TasaInteres tasaInteres) {
         this.tasaInteres = tasaInteres;
     }
-   
 
-    
-    
+    public List<DetalleCredito> getDetalleCredito() {
+        return detalleCredito;
+    }
+
+    public void setDetalleCredito(List<DetalleCredito> detalleCredito) {
+        this.detalleCredito = detalleCredito;
+    }
+
+    public List<SolicitudCredito> getSolicitudCredito() {
+        return solicitudCredito;
+    }
+
+    public void setSolicitudCredito(List<SolicitudCredito> solicitudCredito) {
+        this.solicitudCredito = solicitudCredito;
+    }
+
+    @Override
+    public String toString() {
+        return "Credito{" + "codigo=" + codigo + ", detalle=" + detalle + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", monto=" + monto + ", tiempo=" + tiempo + ", tipoEntrega=" + tipoEntrega + ", socio=" + socio + ", tasaInteres=" + tasaInteres + ", detalleCredito=" + detalleCredito + ", solicitudCredito=" + solicitudCredito + '}';
+    }
+
     
     
 }
