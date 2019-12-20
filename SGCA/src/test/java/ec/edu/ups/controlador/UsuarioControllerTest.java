@@ -6,6 +6,7 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.modelo.Usuario;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -49,7 +50,7 @@ public class UsuarioControllerTest {
         UsuarioController instance = new UsuarioController();
         instance.crear(usuario);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -64,7 +65,7 @@ public class UsuarioControllerTest {
         Usuario result = instance.buscar(codigo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -79,7 +80,7 @@ public class UsuarioControllerTest {
         boolean result = instance.eliminar(codigo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -93,7 +94,7 @@ public class UsuarioControllerTest {
         UsuarioController instance = new UsuarioController();
         instance.actualizar(codigo, usuario);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -103,11 +104,11 @@ public class UsuarioControllerTest {
     public void testGetListaUsuario() {
         System.out.println("getListaUsuario");
         UsuarioController instance = new UsuarioController();
-        List<Usuario> expResult = null;
+        List<Usuario> expResult = new ArrayList<>();
         List<Usuario> result = instance.getListaUsuario();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -120,7 +121,7 @@ public class UsuarioControllerTest {
         UsuarioController instance = new UsuarioController();
         instance.setListaUsuario(ListaUsuario);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
