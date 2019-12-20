@@ -175,6 +175,23 @@ public class PersonaControllerTest {
     }
 
     /**
+     * Test of actualizarPersona method, of class PersonaController.
+     */
+    @Test
+    public void testActualizarPersona3() {
+        System.out.println("actualizarPersona");
+        String cedula = "0706148509";
+        Persona persona = persona1;
+        persona.setpNombre("Jordan Fernando");
+        persona.setpApellido("Murillo Valarezo");
+        boolean expResult = false;
+        boolean result = instance.actualizarPersona(cedula, persona);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
      * Test of borrarPersona method, of class PersonaController.
      */
     @Test
@@ -195,6 +212,22 @@ public class PersonaControllerTest {
     @Test
     public void testBorrarPersona2() {
         System.out.println("borrarPersona");
+        String cedula = "0706148509";
+        Boolean expResult = false;
+        Boolean result = instance.borrarPersona(cedula);
+        System.out.println(result);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of borrarPersona method, of class PersonaController.
+     */
+    @Test
+    public void testBorrarPersona3() {
+        System.out.println("borrarPersona");
+        instance.crearPersona(persona1);
         String cedula = "0706148509";
         Boolean expResult = false;
         Boolean result = instance.borrarPersona(cedula);
