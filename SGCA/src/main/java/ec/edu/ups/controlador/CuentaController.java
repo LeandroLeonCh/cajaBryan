@@ -6,6 +6,7 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.modelo.Cuenta;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -27,5 +28,31 @@ public class CuentaController {
             }            
         }
         return null;
+    }
+    
+    public void actualizar(Cuenta cuenta){
+        for(Iterator<Cuenta> iterator = ListaCuentas.iterator(); iterator.hasNext();){
+            Cuenta c = iterator.next();
+            if(cuenta.getCodigo()== c.getCodigo()){
+                ListaCuentas.remove(cuenta);
+                ListaCuentas.add(c);
+            }
+        }
+    }
+    
+    public boolean eliminar (int codigo){
+        Cuenta cuenta = buscar(codigo);
+        if(cuenta != null){
+            return ListaCuentas.remove(cuenta);
+        }
+        return false;
+    }
+
+    public Set<Cuenta> getListaCuentas() {
+        return ListaCuentas;
+    }
+
+    public void setListaCuentas(Set<Cuenta> ListaCuentas) {
+        this.ListaCuentas = ListaCuentas;
     }
 }
