@@ -48,7 +48,7 @@ public class CreditoTest {
         Date fechaN = format.parse("20/04/1994");
         Date fechaI = format.parse("10/01/2016");
         
-        socio = new Socio("Activo", fechaI, 12.666, 1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja" );
+        socio = new Socio(1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja", "Activo", fechaI, 12.666);
         tasaInteres = new TasaInteres(1, "Tasa 1", "2019", 0.40);
         
         credito = new Credito(1, "Casa", fechaInicio, fechaFin, 100.99, 365, 100.00, socio, tasaInteres );
