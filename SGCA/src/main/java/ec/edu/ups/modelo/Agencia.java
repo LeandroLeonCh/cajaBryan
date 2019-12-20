@@ -68,4 +68,12 @@ public class Agencia {
         this.tipo = tipo;
     }
 
+    @Override
+    public String toString() {
+        return "Agencia{" + "codigo=" + codigo + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono + ", tipo=" + tipo + '}';
+    }
+    
+    
+    
+    
 }

@@ -13,7 +13,7 @@ public class Usuario {
 
     private int codigo;
     private String nombre;
-    private String clase;
+    private String clave;
     private String estado;
     private String rol;
     private Empleado empleado;
@@ -21,10 +21,10 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int codigo, String nombre, String clase, String estado, String rol, Empleado empleado) {
+    public Usuario(int codigo, String nombre, String clave, String estado, String rol, Empleado empleado) {
         this.codigo = codigo;
         this.nombre = nombre;
-        this.clase = clase;
+        this.clave = clave;
         this.estado = estado;
         this.rol = rol;
         this.empleado = empleado;
@@ -46,12 +46,12 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getClase() {
-        return clase;
+    public String getClave() {
+        return clave;
     }
 
-    public void setClase(String clase) {
-        this.clase = clase;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
     public String getEstado() {
@@ -76,6 +76,11 @@ public class Usuario {
 
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "codigo=" + codigo + ", nombre=" + nombre + ", clave=" + clave + ", estado=" + estado + ", rol=" + rol + ", empleado=" + empleado + '}';
     }
 
 }

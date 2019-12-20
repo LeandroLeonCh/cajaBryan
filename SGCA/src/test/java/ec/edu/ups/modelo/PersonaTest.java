@@ -41,7 +41,6 @@ public class PersonaTest {
     public void setUp() throws ParseException {
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un formato de fecha
         Date fecha = format.parse("17/01/1999");
-        System.out.println(fecha);
         p1 = new Persona(1, "0703021287", "Jordan", "Murillo", fecha, "0980792708", "Av. Loja");
     }
 
