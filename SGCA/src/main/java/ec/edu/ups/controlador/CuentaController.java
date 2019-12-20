@@ -6,7 +6,9 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.modelo.Cuenta;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -14,45 +16,53 @@ import java.util.Set;
  * @author USER
  */
 public class CuentaController {
-    private Set<Cuenta> ListaCuentas;
-    
-    public void crear(Cuenta cuenta){
-        cuenta.setCodigo(ListaCuentas.size());
-        ListaCuentas.add(cuenta);
+
+    private List<Cuenta> cuentaList;
+
+    public CuentaController() {
+        cuentaList = new ArrayList<>();
     }
-    
-    public Cuenta buscar(int codigo){
-        for (Cuenta cuenta : ListaCuentas) {
-            if (cuenta.getCodigo()==codigo){
+
+    public List<Cuenta> getCuentaList() {
+        return cuentaList;
+    }
+
+    public void setCuentaList(List<Cuenta> cuentaList) {
+        this.cuentaList = cuentaList;
+    }
+
+    public void crearCuenta(Cuenta cuenta) {
+        cuentaList.add(cuenta);
+    }
+
+    public Cuenta buscarCuenta(int codigo) {
+        for (Cuenta cuenta : cuentaList) {
+            if (cuenta.getCodigo() == codigo) {
                 return cuenta;
-            }            
+            }
         }
         return null;
     }
     
-    public void actualizar(Cuenta cuenta){
-        for(Iterator<Cuenta> iterator = ListaCuentas.iterator(); iterator.hasNext();){
-            Cuenta c = iterator.next();
-            if(cuenta.getCodigo()== c.getCodigo()){
-                ListaCuentas.remove(cuenta);
-                ListaCuentas.add(c);
+    public boolean eliminarCuenta(int codigo) {
+        for(int i = 0; i < cuentaList.size(); i++){
+            Cuenta c = cuentaList.get(i);
+            if(c.getCodigo() == codigo){
+                cuentaList.remove(i);
+                return true;
             }
-        }
-    }
-    
-    public boolean eliminar (int codigo){
-        Cuenta cuenta = buscar(codigo);
-        if(cuenta != null){
-            return ListaCuentas.remove(cuenta);
         }
         return false;
     }
 
-    public Set<Cuenta> getListaCuentas() {
-        return ListaCuentas;
-    }
-
-    public void setListaCuentas(Set<Cuenta> ListaCuentas) {
-        this.ListaCuentas = ListaCuentas;
-    }
+    public void actualizarCuenta(int codigo, Cuenta cuenta) {
+        for(int i = 0; i < cuentaList.size(); i++){
+            Cuenta c = cuentaList.get(i);
+            if(c.getCodigo() == codigo){
+                cuentaList.set(i, cuenta);
+                return;
+            }
+        }
+        return;
+    }  
 }
