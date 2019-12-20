@@ -6,23 +6,27 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.modelo.DetalleAhorro;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Starman
  */
 public class DetalleAhorroController {
-    private Set<DetalleAhorro> ListaDetalleAhorro;
+
+    private List<DetalleAhorro> detalleAhorroList;
+
+    public DetalleAhorroController() {
+        detalleAhorroList = new ArrayList<>();
+    }
 
     public void crear(DetalleAhorro detalleAhorro) {
-        detalleAhorro.setCodigo(ListaDetalleAhorro.size() + 1);
-        ListaDetalleAhorro.add(detalleAhorro);
+        detalleAhorroList.add(detalleAhorro);
     }
 
     public DetalleAhorro buscar(int codigo) {
-        for (DetalleAhorro detalleAhorro : ListaDetalleAhorro) {
+        for (DetalleAhorro detalleAhorro : detalleAhorroList) {
             if (detalleAhorro.getCodigo() == codigo) {
                 return detalleAhorro;
             }
@@ -33,27 +37,26 @@ public class DetalleAhorroController {
     public boolean eliminar(int codigo) {
         DetalleAhorro detalleAhorro = buscar(codigo);
         if (detalleAhorro != null) {
-            return ListaDetalleAhorro.remove(detalleAhorro);
+            detalleAhorroList.remove(detalleAhorro);
+            return true;
         }
         return false;
     }
 
-    public void actualizar(DetalleAhorro detalleAhorro) {
-        for (Iterator<DetalleAhorro> iterator = ListaDetalleAhorro.iterator(); iterator.hasNext();) {
-            DetalleAhorro a = iterator.next();
-            if (detalleAhorro.getCodigo() == a.getCodigo()) {
-                ListaDetalleAhorro.remove(detalleAhorro);
-                ListaDetalleAhorro.add(a);
+    public void actualizar(int codigo, DetalleAhorro detalleAhorro) {
+        for (int i = 0; i < detalleAhorroList.size(); i++) {
+            DetalleAhorro a = detalleAhorroList.get(i);
+            if (codigo == a.getCodigo()) {
+                detalleAhorroList.set(i, detalleAhorro);
             }
         }
-
     }
 
-    public Set<DetalleAhorro> getListaDetalleAhorro() {
-        return ListaDetalleAhorro;
+    public List<DetalleAhorro> getDetalleAhorroList() {
+        return detalleAhorroList;
     }
 
-    public void setListaDetalleAhorro(Set<DetalleAhorro> ListaDetalleAhorro) {
-        this.ListaDetalleAhorro = ListaDetalleAhorro;
+    public void setDetalleAhorroList(List<DetalleAhorro> detalleAhorroList) {
+        this.detalleAhorroList = detalleAhorroList;
     }
 }
