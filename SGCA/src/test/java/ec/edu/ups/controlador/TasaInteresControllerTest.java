@@ -98,6 +98,36 @@ public class TasaInteresControllerTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    
+    /**
+     * Test of buscar method, of class TasaInteresController.
+     */
+    @Test
+    public void testBuscar1() {
+        System.out.println("buscar");
+        instance.crear(tasaInteres1);
+        int codigo = 1;
+        TasaInteres expResult = tasaInteres1;
+        TasaInteres result = instance.buscar(codigo);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of buscar method, of class TasaInteresController.
+     */
+    @Test
+    public void testBuscar2() {
+        System.out.println("buscar");
+        instance.crear(tasaInteres1);
+        int codigo = 1;
+        TasaInteres expResult = tasaInteres1;
+        TasaInteres result = instance.buscar(codigo);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 
     /**
      * Test of eliminar method, of class TasaInteresController.
@@ -113,12 +143,76 @@ public class TasaInteresControllerTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    
+    /**
+     * Test of eliminar method, of class TasaInteresController.
+     */
+    @Test
+    public void testEliminar1() {
+        System.out.println("eliminar");
+        instance.crear(tasaInteres1);
+        int codigo = 1;
+        boolean expResult = false;
+        boolean result = instance.eliminar(codigo);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of eliminar method, of class TasaInteresController.
+     */
+    @Test
+    public void testEliminar2() {
+        System.out.println("eliminar");
+        instance.crear(tasaInteres1);
+        int codigo = 1;
+        boolean expResult = false;
+        boolean result = instance.eliminar(codigo);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 
     /**
      * Test of actualizar method, of class TasaInteresController.
      */
     @Test
     public void testActualizar() {
+        System.out.println("actualizar");
+        instance.crear(tasaInteres1);
+        int codigo = 1;
+        TasaInteres tasaInteres = tasaInteres1;
+        tasaInteres.setPorcentaje(0.10);
+        boolean expResult = false;
+        boolean result = instance.actualizar(codigo, tasaInteres);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of actualizar method, of class TasaInteresController.
+     */
+    @Test
+    public void testActualizar1() {
+        System.out.println("actualizar");
+        instance.crear(tasaInteres1);
+        int codigo = 1;
+        TasaInteres tasaInteres = tasaInteres1;
+        tasaInteres.setPorcentaje(0.10);
+        boolean expResult = false;
+        boolean result = instance.actualizar(codigo, tasaInteres);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of actualizar method, of class TasaInteresController.
+     */
+    @Test
+    public void testActualizar2() {
         System.out.println("actualizar");
         instance.crear(tasaInteres1);
         int codigo = 1;

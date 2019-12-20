@@ -104,6 +104,36 @@ public class SolicitudCreditoControllerTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    
+    /**
+     * Test of buscar method, of class SolicitudCreditoController.
+     */
+    @Test
+    public void testBuscar1() {
+        System.out.println("buscar");
+        instance.crear(solicitud1);
+        int codigo = 1;
+        SolicitudCredito expResult = solicitud1;
+        SolicitudCredito result = instance.buscar(codigo);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of buscar method, of class SolicitudCreditoController.
+     */
+    @Test
+    public void testBuscar2() {
+        System.out.println("buscar");
+        instance.crear(solicitud1);
+        int codigo = 1;
+        SolicitudCredito expResult = solicitud1;
+        SolicitudCredito result = instance.buscar(codigo);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 
     /**
      * Test of eliminar method, of class SolicitudCreditoController.
@@ -119,12 +149,76 @@ public class SolicitudCreditoControllerTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    
+    /**
+     * Test of eliminar method, of class SolicitudCreditoController.
+     */
+    @Test
+    public void testEliminar1() {
+        System.out.println("eliminar");
+        instance.crear(solicitud1);
+        int codigo = 1;
+        boolean expResult = false;
+        boolean result = instance.eliminar(codigo);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of eliminar method, of class SolicitudCreditoController.
+     */
+    @Test
+    public void testEliminar2() {
+        System.out.println("eliminar");
+        instance.crear(solicitud1);
+        int codigo = 1;
+        boolean expResult = false;
+        boolean result = instance.eliminar(codigo);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 
     /**
      * Test of actualizar method, of class SolicitudCreditoController.
      */
     @Test
     public void testActualizar() {
+        System.out.println("actualizar");
+        instance.crear(solicitud1);
+        int codigo = 1;
+        SolicitudCredito solicitudCredito = solicitud1;
+        solicitudCredito.setEstado("Aprobado");
+        boolean expResult = false;
+        boolean result = instance.actualizar(codigo, solicitudCredito);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+     /**
+     * Test of actualizar method, of class SolicitudCreditoController.
+     */
+    @Test
+    public void testActualizar1() {
+        System.out.println("actualizar");
+        instance.crear(solicitud1);
+        int codigo = 1;
+        SolicitudCredito solicitudCredito = solicitud1;
+        solicitudCredito.setEstado("Aprobado");
+        boolean expResult = false;
+        boolean result = instance.actualizar(codigo, solicitudCredito);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+     /**
+     * Test of actualizar method, of class SolicitudCreditoController.
+     */
+    @Test
+    public void testActualizar2() {
         System.out.println("actualizar");
         instance.crear(solicitud1);
         int codigo = 1;
