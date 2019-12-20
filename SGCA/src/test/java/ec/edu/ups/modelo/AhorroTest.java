@@ -47,6 +47,9 @@ public class AhorroTest {
     @Before
     public void setUp() throws ParseException {
         listaDetalleAhorro = new ArrayList<>();
+        
+        
+        
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un fomato de fecha
         Date fecha = format.parse("25/07/2017");
         Date fechaN = format.parse("20/04/1994");

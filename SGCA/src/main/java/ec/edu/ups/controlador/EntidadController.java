@@ -21,11 +21,11 @@ public class EntidadController {
         entidadList = new ArrayList<>();
     }
 
-    public void crear(Entidad entidad) {
+    public void crearEntidad(Entidad entidad) {
         entidadList.add(entidad);
     }
 
-    public Entidad buscar(int codigo) {
+    public Entidad buscarEntidad(int codigo) {
         for (Entidad entidad : entidadList) {
             if (entidad.getCodigo() == codigo) {
                 return entidad;
@@ -34,15 +34,15 @@ public class EntidadController {
         return null;
     }
 
-    public boolean eliminar(int codigo) {
-        Entidad entidad = buscar(codigo);
+    public boolean eliminarEntidad(int codigo) {
+        Entidad entidad = buscarEntidad(codigo);
         if (entidad != null) {
             return entidadList.remove(entidad);
         }
         return false;
     }
 
-    public boolean actualizar(Entidad entidad) {
+    public boolean actualizarEntidad(Entidad entidad) {
         for (int i = 0; i < entidadList.size(); i++) {
             Entidad a = entidadList.get(i);
             if (entidad.getCodigo() == a.getCodigo()) {
