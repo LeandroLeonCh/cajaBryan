@@ -6,8 +6,8 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.modelo.Usuario;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,15 +15,18 @@ import java.util.Set;
  */
 public class UsuarioController {
 
-    private Set<Usuario> ListaUsuario;
+    private List<Usuario> usuarioList;
+
+    public UsuarioController() {
+        usuarioList = new ArrayList<>();
+    }
 
     public void crear(Usuario usuario) {
-        usuario.setCodigo(ListaUsuario.size() + 1);
-        ListaUsuario.add(usuario);
+        usuarioList.add(usuario);
     }
 
     public Usuario buscar(int codigo) {
-        for (Usuario usuario : ListaUsuario) {
+        for (Usuario usuario : usuarioList) {
             if (usuario.getCodigo() == codigo) {
                 return usuario;
             }
@@ -34,27 +37,25 @@ public class UsuarioController {
     public boolean eliminar(int codigo) {
         Usuario usuario = buscar(codigo);
         if (usuario != null) {
-            return ListaUsuario.remove(usuario);
+            return usuarioList.remove(usuario);
         }
         return false;
     }
 
-    public void actualizar(Usuario usuario) {
-        for (Iterator<Usuario> iterator = ListaUsuario.iterator(); iterator.hasNext();) {
-            Usuario a = iterator.next();
+    public void actualizar(int codigo, Usuario usuario) {
+        for (int i = 0; i < usuarioList.size(); i++) {
+            Usuario a = usuarioList.get(i);
             if (usuario.getCodigo() == a.getCodigo()) {
-                ListaUsuario.remove(usuario);
-                ListaUsuario.add(a);
+                usuarioList.set(i, usuario);
             }
         }
-
     }
 
-    public Set<Usuario> getListaUsuario() {
-        return ListaUsuario;
+    public List<Usuario> getListaUsuario() {
+        return usuarioList;
     }
 
-    public void setListaUsuario(Set<Usuario> ListaUsuario) {
-        this.ListaUsuario = ListaUsuario;
+    public void setListaUsuario(List<Usuario> ListaUsuario) {
+        this.usuarioList = ListaUsuario;
     }
 }
