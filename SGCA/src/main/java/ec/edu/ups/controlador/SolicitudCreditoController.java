@@ -13,7 +13,7 @@ import java.util.Set;
  *
  * @author ISMAEL
  */
-public class ControladorSolicitudCredito {
+public class SolicitudCreditoController {
     
     private Set<SolicitudCredito> listSolicitudCredito;
 

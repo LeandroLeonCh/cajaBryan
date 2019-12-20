@@ -109,6 +109,11 @@ public class Credito {
     public void setTasaInteres(TasaInteres tasaInteres) {
         this.tasaInteres = tasaInteres;
     }
+
+    @Override
+    public String toString() {
+        return "Credito{" + "codigo=" + codigo + ", detalle=" + detalle + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", monto=" + monto + ", tiempo=" + tiempo + ", tipoEntrega=" + tipoEntrega + ", socio=" + socio + ", tasaInteres=" + tasaInteres + '}';
+    }
    
 
     
