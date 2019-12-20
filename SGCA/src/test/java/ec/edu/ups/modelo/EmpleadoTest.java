@@ -42,7 +42,7 @@ public class EmpleadoTest {
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un formato de fecha
         Date fecha = format.parse("25/03/1995");
         Date fechaIngreso = format.parse("15/10/2019");
-        empleado = new Empleado("cajero", "activo", fechaIngreso, 650.44, 1, "0104796230", "Xavier", "Jarro", fecha, "0983037178", "El Cebollar");
+        empleado = new Empleado(1, "0104796230", "Xavier", "Jarro", fecha, "0983037178", "El Cebollar", "cajero", "activo", fechaIngreso, 650.44);
         empleado.toString();
 
     }
