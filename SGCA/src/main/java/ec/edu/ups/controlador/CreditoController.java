@@ -39,14 +39,16 @@ public class CreditoController {
         return false;
     }
 
-    public void actualizar(Credito credito) {
+    public boolean actualizar(Credito credito) {
         for (Iterator<Credito> iterator = listCredito.iterator(); iterator.hasNext();) {
             Credito nuevoCredito = iterator.next();
             if (credito.getCodigo() == nuevoCredito.getCodigo()) {
                 listCredito.remove(credito);
                 listCredito.add(nuevoCredito);
+                return true;
             }
         }
+        return false;
     }
 
     public Set<Credito> getListCredito() {

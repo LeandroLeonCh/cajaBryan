@@ -6,7 +6,9 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.modelo.TasaInteres;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -15,10 +17,21 @@ import java.util.Set;
  */
 public class TasaInteresController {
 
-    private Set<TasaInteres> listTasaInteres;
+    private List<TasaInteres> listTasaInteres;
+    
+    public TasaInteresController(){
+        listTasaInteres = new ArrayList<>();
+    }
+
+    public List<TasaInteres> getListTasaInteres() {
+        return listTasaInteres;
+    }
+
+    public void setListTasaInteres(List<TasaInteres> listTasaInteres) {
+        this.listTasaInteres = listTasaInteres;
+    }
 
     public void crear(TasaInteres tasaInteres) {
-        tasaInteres.setCodigo(listTasaInteres.size() + 1);
         listTasaInteres.add(tasaInteres);
     }
 
@@ -32,29 +45,26 @@ public class TasaInteresController {
     }
 
     public boolean eliminar(int codigo) {
-        TasaInteres tasaInteres = buscar(codigo);
-        if (tasaInteres != null) {
-            return listTasaInteres.remove(tasaInteres);
+        for (int i = 0; i < listTasaInteres.size(); i++) {
+            TasaInteres tasa = listTasaInteres.get(i);
+            if (tasa.getCodigo() == codigo) {
+                listTasaInteres.remove(i);
+                return true;
+            }
         }
         return false;
     }
 
-    public void actualizar(TasaInteres tasaInteres) {
-        for (Iterator<TasaInteres> iterator = listTasaInteres.iterator(); iterator.hasNext();) {
-            TasaInteres nuevaTasaInteres = iterator.next();
-            if (tasaInteres.getCodigo() == nuevaTasaInteres.getCodigo()) {
-                listTasaInteres.remove(tasaInteres);
-                listTasaInteres.add(nuevaTasaInteres);
+    public boolean actualizar(int codigo, TasaInteres tasaInteres) {
+         for (int i = 0; i < listTasaInteres.size(); i++) {
+            TasaInteres tasa = listTasaInteres.get(i);
+            if (tasa.getCodigo() == codigo) {
+                listTasaInteres.set(i, tasaInteres);
+                return true;
             }
         }
+        return false;
     }
 
-    public Set<TasaInteres> getListTasaInteres() {
-        return listTasaInteres;
-    }
-
-    public void setListTasaInteres(Set<TasaInteres> listTasaInteres) {
-        this.listTasaInteres = listTasaInteres;
-    }
-
+    
 }

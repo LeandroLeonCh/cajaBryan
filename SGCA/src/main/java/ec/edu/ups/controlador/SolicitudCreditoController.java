@@ -6,7 +6,9 @@
 package ec.edu.ups.controlador;
 import ec.edu.ups.modelo.Credito;
 import ec.edu.ups.modelo.SolicitudCredito;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -15,11 +17,23 @@ import java.util.Set;
  */
 public class SolicitudCreditoController {
     
-    private Set<SolicitudCredito> listSolicitudCredito;
+    private List<SolicitudCredito> listSolicitudCredito;
+    
+    public SolicitudCreditoController(){
+        listSolicitudCredito = new ArrayList<>();
+    }
+
+    public List<SolicitudCredito> getListSolicitudCredito() {
+        return listSolicitudCredito;
+    }
+
+    public void setListSolicitudCredito(List<SolicitudCredito> listSolicitudCredito) {
+        this.listSolicitudCredito = listSolicitudCredito;
+    }
+    
 
     public void crear(SolicitudCredito solicitudCredito) {
-        solicitudCredito.setCodigo(listSolicitudCredito.size() + 1);
-        listSolicitudCredito.add(solicitudCredito);
+       listSolicitudCredito.add(solicitudCredito);
     }
 
     public SolicitudCredito buscar(int codigo) {
@@ -32,30 +46,28 @@ public class SolicitudCreditoController {
     }
 
     public boolean eliminar(int codigo) {
-        SolicitudCredito solicitudCredito = buscar(codigo);
-        if (solicitudCredito != null) {
-            return listSolicitudCredito.remove(solicitudCredito);
+         for (int i = 0; i < listSolicitudCredito.size(); i++) {
+            SolicitudCredito solcre = listSolicitudCredito.get(i);
+            if (solcre.getCodigo() == codigo) {
+                listSolicitudCredito.remove(i);
+                return true;
+            }
         }
         return false;
     }
     
-     public void actualizar(SolicitudCredito solicitudCredito) {
-        for (Iterator<SolicitudCredito> iterator = listSolicitudCredito.iterator(); iterator.hasNext();) {
-            SolicitudCredito nuevaSolicitudCredito = iterator.next();
-            if (solicitudCredito.getCodigo() == nuevaSolicitudCredito.getCodigo()) {
-                listSolicitudCredito.remove(solicitudCredito);
-                listSolicitudCredito.add(nuevaSolicitudCredito);
+     public boolean actualizar(int codigo, SolicitudCredito solicitudCredito) {
+        for (int i = 0; i < listSolicitudCredito.size(); i++) {
+            SolicitudCredito solcre = listSolicitudCredito.get(i);
+            if (solcre.getCodigo() == codigo) {
+                listSolicitudCredito.set(i, solicitudCredito);
+                return true;
             }
         }
+        return false;
     }
 
-    public Set<SolicitudCredito> getListSolicitudCredito() {
-        return listSolicitudCredito;
-    }
-
-    public void setListSolicitudCredito(Set<SolicitudCredito> listSolicitudCredito) {
-        this.listSolicitudCredito = listSolicitudCredito;
-    }
+    
      
      
     
