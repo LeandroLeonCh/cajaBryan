@@ -58,8 +58,7 @@ public class TasaInteres {
         this.porcentaje = porcentaje;
     }
 
-<<<<<<< HEAD
-=======
+
     @Override
     public String toString() {
         return "TasaInteres{" + "codigo=" + codigo + ", nombre=" + nombre + ", periodo=" + periodo + ", porcentaje=" + porcentaje + '}';
@@ -67,5 +66,5 @@ public class TasaInteres {
     
     
     
->>>>>>> 6c8a7a8b9b521c51845e7887854fa4beeae56cdf
+
 }
