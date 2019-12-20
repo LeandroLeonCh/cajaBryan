@@ -5,12 +5,27 @@
  */
 package ec.edu.ups.controlador;
 
+import ec.edu.ups.modelo.Cuenta;
+import java.util.Set;
+
 /**
  *
  * @author USER
  */
 public class CuentaController {
-    public void crearCuenta(){
-        
+    private Set<Cuenta> ListaCuentas;
+    
+    public void crear(Cuenta cuenta){
+        cuenta.setCodigo(ListaCuentas.size());
+        ListaCuentas.add(cuenta);
+    }
+    
+    public Cuenta buscar(int codigo){
+        for (Cuenta cuenta : ListaCuentas) {
+            if (cuenta.getCodigo()==codigo){
+                return cuenta;
+            }            
+        }
+        return null;
     }
 }
