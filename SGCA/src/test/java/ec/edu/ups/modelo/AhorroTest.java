@@ -8,6 +8,7 @@ package ec.edu.ups.modelo;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
@@ -45,6 +46,7 @@ public class AhorroTest {
     
     @Before
     public void setUp() throws ParseException{
+        listaDetalleAhorro = new ArrayList<>();
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un fomato de fecha
         Date fecha = format.parse("25/07/2017");
         Date fechaN = format.parse("20/04/1994");
@@ -96,7 +98,7 @@ public class AhorroTest {
     @Test
     public void testGetEstado() {
         System.out.println("getEstado");
-        String expResult = "Ahorro";
+        String expResult = "Activo";
         String result = ahorro.getEstado();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -259,7 +261,7 @@ public class AhorroTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        String expResult = "Ahorro{codigo=1, estado=Activo, fechaRegistro=Wed Jan 25 00:07:00 COT 2017, monto=769.78, socio=socio, tasaInteres=tasaInteres, detalleAhorro=listaDetalleAhorro}";
+        String expResult = "Ahorro{codigo=1, estado=Activo, fechaRegistro=Wed Jan 25 00:07:00 COT 2017, monto=769.78, socio=Socio{estado=Activo, fechaIngreso=Sun Jan 10 00:01:00 COT 2016, monto=12.666}, tasaInteres=TasaInteres{codigo=1, nombre=Tasa 1, periodo=2019, porcentaje=0.4}, detalleAhorro=[DetalleAhorro{codigo=1, fechaPago=Mon Jan 11 00:01:00 COT 2016, interes=0.02, saldo=100.0}]}";
         String result = ahorro.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
