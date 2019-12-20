@@ -63,8 +63,5 @@ public class TasaInteres {
     public String toString() {
         return "TasaInteres{" + "codigo=" + codigo + ", nombre=" + nombre + ", periodo=" + periodo + ", porcentaje=" + porcentaje + '}';
     }
-    
-    
-    
-
+   
 }

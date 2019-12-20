@@ -33,7 +33,7 @@ public class AgenciaTest {
     }
     
     @Before
-    public void setUp() throws ParseException{
+    public void setUp(){
         agencia = new Agencia(1, "Cooperativa SGCA", "Gil Ramirez Davalos", "0981241115","N");
     }
     
