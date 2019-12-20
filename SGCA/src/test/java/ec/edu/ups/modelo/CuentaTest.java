@@ -24,8 +24,8 @@ import static org.junit.Assert.*;
  */
 public class CuentaTest {
     
-    private Cuenta c1;
-    private Socio s1;
+    private Cuenta cuenta;
+    private Socio socio;
     public CuentaTest() {
     }
     
@@ -46,8 +46,8 @@ public class CuentaTest {
         System.err.println(fechaN);
         Date fechaI = format.parse("10/01/2016");
         System.err.println(fechaI);     
-        s1 = new Socio("Activo", fechaI, 12.666, 1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja" );
-        c1 = new Cuenta(1, "789654321" , fecha, "Activo",s1);
+        socio = new Socio("Activo", fechaI, 12.666, 1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja" );
+        cuenta = new Cuenta(1, "789654321" , fecha, "Activo",socio);
         
     }
     
@@ -62,7 +62,7 @@ public class CuentaTest {
     public void testGetCodigo() {
         System.out.println("getCodigo");
         int expResult = 1;
-        int result = c1.getCodigo();
+        int result = cuenta.getCodigo();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -88,7 +88,7 @@ public class CuentaTest {
     public void testGetNumeroCuenta() {
         System.out.println("getNumeroCuenta");
         String expResult = "789654321";
-        String result = c1.getNumeroCuenta();
+        String result = cuenta.getNumeroCuenta();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -120,7 +120,7 @@ public class CuentaTest {
         } catch (ParseException ex) {
             Logger.getLogger(PersonaTest.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Date result = c1.getFechaRegistro();
+        Date result = cuenta.getFechaRegistro();
         System.out.println("result " + result);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -147,7 +147,7 @@ public class CuentaTest {
     public void testGetEstado() {
         System.out.println("getEstado");
         String expResult = "Activo";
-        String result = c1.getEstado();
+        String result = cuenta.getEstado();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -172,8 +172,8 @@ public class CuentaTest {
     @Test
     public void testGetSocio() {
         System.out.println("getSocio");
-        Socio expResult = s1;
-        Socio result = c1.getSocio();
+        Socio expResult = socio;
+        Socio result = cuenta.getSocio();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -194,8 +194,8 @@ public class CuentaTest {
     
     public void testToString() {
         System.out.println("toString");
-        String expResult = "Cuenta{codigo=1, numeroCuenta=789654321, fechaRegistro=Wed Jan 25 00:07:00 COT 2017, socio=s1}";
-        String result = c1.toString();
+        String expResult = "Cuenta{codigo=1, numeroCuenta=789654321, fechaRegistro=Wed Jan 25 00:07:00 COT 2017, socio=socio}";
+        String result = cuenta.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
