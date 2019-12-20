@@ -21,11 +21,11 @@ public class AhorroController {
         ahorroList = new ArrayList<>();
     }
 
-    public void crear(Ahorro ahorro) {
+    public void crearAhorro(Ahorro ahorro) {
         ahorroList.add(ahorro);
     }
 
-    public Ahorro buscar(int codigo) {
+    public Ahorro buscarAhorro(int codigo) {
         for (Ahorro ahorro : ahorroList) {
             if (ahorro.getCodigo() == codigo) {
                 return ahorro;
@@ -34,18 +34,19 @@ public class AhorroController {
         return null;
     }
 
-    public boolean eliminar(int codigo) {
-        Ahorro ahorro = buscar(codigo);
+    public boolean eliminarAhorro(int codigo) {
+        Ahorro ahorro = buscarAhorro(codigo);
         if (ahorro != null) {
-            return ahorroList.remove(ahorro);
+            ahorroList.remove(ahorro);
+            return true;
         }
         return false;
     }
 
-    public boolean actualizar(Ahorro ahorro) {
+    public boolean actualizarAhorro(int codigo, Ahorro ahorro) {
         for (int i = 0; i < ahorroList.size(); i++) {
             Ahorro a = ahorroList.get(i);
-            if (ahorro.getCodigo() == a.getCodigo()) {
+            if (codigo == a.getCodigo()) {
                 ahorroList.set(i, a);
                 return true;
             }
