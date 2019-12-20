@@ -5,7 +5,12 @@
  */
 package ec.edu.ups.modelo;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,6 +24,10 @@ import static org.junit.Assert.*;
  */
 public class CreditoTest {
     
+    private Credito credito;
+    private Socio socio;
+    private TasaInteres tasaInteres;
+    
     public CreditoTest() {
     }
     
@@ -31,7 +40,18 @@ public class CreditoTest {
     }
     
     @Before
-    public void setUp() {
+    public void setUp() throws ParseException{
+        DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un fomato de fecha
+        Date fechaInicio = format.parse("01/01/2018");
+        System.out.println(fechaInicio);
+        Date fechaFin = format.parse("01/01/2019");
+        Date fechaN = format.parse("20/04/1994");
+        Date fechaI = format.parse("10/01/2016");
+        
+        socio = new Socio("Activo", fechaI, 12.666, 1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja" );
+        tasaInteres = new TasaInteres(1, "Tasa 1", "2019", 0.40);
+        
+        credito = new Credito(1, "Casa", fechaInicio, fechaFin, 100.99, 365, 100.00, socio, tasaInteres );
     }
     
     @After
@@ -44,12 +64,11 @@ public class CreditoTest {
     @Test
     public void testGetCodigo() {
         System.out.println("getCodigo");
-        Credito instance = new Credito();
-        int expResult = 0;
-        int result = instance.getCodigo();
+        int expResult = 1;
+        int result = credito.getCodigo();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -62,7 +81,7 @@ public class CreditoTest {
         Credito instance = new Credito();
         instance.setCodigo(codigo);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -71,12 +90,11 @@ public class CreditoTest {
     @Test
     public void testGetDetalle() {
         System.out.println("getDetalle");
-        Credito instance = new Credito();
-        String expResult = "";
-        String result = instance.getDetalle();
+        String expResult = "Casa";
+        String result = credito.getDetalle();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -89,7 +107,7 @@ public class CreditoTest {
         Credito instance = new Credito();
         instance.setDetalle(detalle);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -98,12 +116,18 @@ public class CreditoTest {
     @Test
     public void testGetFechaInicio() {
         System.out.println("getFechaInicio");
-        Credito instance = new Credito();
+        DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un formato de fecha
         Date expResult = null;
-        Date result = instance.getFechaInicio();
+        try {
+            expResult = format.parse("01/01/2018");
+        } catch (ParseException ex) {
+            Logger.getLogger(PersonaTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Date result = credito.getFechaInicio();
+        System.out.println("result " + result);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -116,7 +140,7 @@ public class CreditoTest {
         Credito instance = new Credito();
         instance.setFechaInicio(fechaInicio);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -125,12 +149,18 @@ public class CreditoTest {
     @Test
     public void testGetFechaFin() {
         System.out.println("getFechaFin");
-        Credito instance = new Credito();
+        DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un formato de fecha
         Date expResult = null;
-        Date result = instance.getFechaFin();
+        try {
+            expResult = format.parse("01/01/2019");
+        } catch (ParseException ex) {
+            Logger.getLogger(PersonaTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Date result = credito.getFechaFin();
+        System.out.println("result " + result);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -143,7 +173,7 @@ public class CreditoTest {
         Credito instance = new Credito();
         instance.setFechaFin(fechaFin);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -152,12 +182,11 @@ public class CreditoTest {
     @Test
     public void testGetMonto() {
         System.out.println("getMonto");
-        Credito instance = new Credito();
-        Double expResult = null;
-        Double result = instance.getMonto();
+        Double expResult = 100.99;
+        Double result = credito.getMonto();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -170,7 +199,7 @@ public class CreditoTest {
         Credito instance = new Credito();
         instance.setMonto(monto);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -179,12 +208,11 @@ public class CreditoTest {
     @Test
     public void testGetTiempo() {
         System.out.println("getTiempo");
-        Credito instance = new Credito();
-        int expResult = 0;
-        int result = instance.getTiempo();
+        int expResult = 365;
+        int result = credito.getTiempo();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -197,7 +225,7 @@ public class CreditoTest {
         Credito instance = new Credito();
         instance.setTiempo(tiempo);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -206,12 +234,11 @@ public class CreditoTest {
     @Test
     public void testGetTipoEntrega() {
         System.out.println("getTipoEntrega");
-        Credito instance = new Credito();
-        Double expResult = null;
-        Double result = instance.getTipoEntrega();
+        Double expResult = 100.00;
+        Double result = credito.getTipoEntrega();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -224,7 +251,7 @@ public class CreditoTest {
         Credito instance = new Credito();
         instance.setTipoEntrega(tipoEntrega);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -233,12 +260,11 @@ public class CreditoTest {
     @Test
     public void testGetSocio() {
         System.out.println("getSocio");
-        Credito instance = new Credito();
-        Socio expResult = null;
-        Socio result = instance.getSocio();
+        Socio expResult = socio;
+        Socio result = credito.getSocio();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -251,7 +277,7 @@ public class CreditoTest {
         Credito instance = new Credito();
         instance.setSocio(socio);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -260,12 +286,11 @@ public class CreditoTest {
     @Test
     public void testGetTasaInteres() {
         System.out.println("getTasaInteres");
-        Credito instance = new Credito();
-        TasaInteres expResult = null;
-        TasaInteres result = instance.getTasaInteres();
+        TasaInteres expResult = tasaInteres;
+        TasaInteres result = credito.getTasaInteres();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -278,7 +303,7 @@ public class CreditoTest {
         Credito instance = new Credito();
         instance.setTasaInteres(tasaInteres);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -287,12 +312,11 @@ public class CreditoTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Credito instance = new Credito();
-        String expResult = "";
-        String result = instance.toString();
+        String expResult = "Credito{codigo=1, detalle=Casa, fechaInicio=Mon Jan 01 00:01:00 COT 2018, fechaFin=Tue Jan 01 00:01:00 COT 2019, monto=100.99, tiempo=365, tipoEntrega=100.0, socio=Socio{estado=Activo, fechaIngreso=Sun Jan 10 00:01:00 COT 2016, monto=12.666}, tasaInteres=TasaInteres{codigo=1, nombre=Tasa 1, periodo=2019, porcentaje=0.4}}";
+        String result = credito.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

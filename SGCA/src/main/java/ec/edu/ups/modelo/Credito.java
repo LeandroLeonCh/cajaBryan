@@ -114,10 +114,4 @@ public class Credito {
     public String toString() {
         return "Credito{" + "codigo=" + codigo + ", detalle=" + detalle + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", monto=" + monto + ", tiempo=" + tiempo + ", tipoEntrega=" + tipoEntrega + ", socio=" + socio + ", tasaInteres=" + tasaInteres + '}';
     }
-   
-
-    
-    
-    
-    
 }
