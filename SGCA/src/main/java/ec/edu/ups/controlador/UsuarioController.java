@@ -42,13 +42,15 @@ public class UsuarioController {
         return false;
     }
 
-    public void actualizar(int codigo, Usuario usuario) {
+    public boolean actualizar(int codigo, Usuario usuario) {
         for (int i = 0; i < usuarioList.size(); i++) {
             Usuario a = usuarioList.get(i);
-            if (usuario.getCodigo() == a.getCodigo()) {
+            if (codigo == a.getCodigo()) {
                 usuarioList.set(i, usuario);
+                return true;
             }
         }
+        return false;
     }
 
     public List<Usuario> getListaUsuario() {
