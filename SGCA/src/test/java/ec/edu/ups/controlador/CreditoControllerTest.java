@@ -108,6 +108,36 @@ public class CreditoControllerTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    
+    /**
+     * Test of eliminar method, of class CreditoController.
+     */
+    @Test
+    public void testEliminar1() {
+        System.out.println("eliminar");
+        //instance.crear(credito1);
+        int codigo = 1;
+        boolean expResult = false;
+        boolean result = instance.eliminar(codigo);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of eliminar method, of class CreditoController.
+     */
+    @Test
+    public void testEliminar2() {
+        System.out.println("eliminar");
+        //instance.crear(credito1);
+        int codigo = 1;
+        boolean expResult = false;
+        boolean result = instance.eliminar(codigo);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 
     /**
      * Test of actualizar method, of class CreditoController.
@@ -119,12 +149,48 @@ public class CreditoControllerTest {
         int codigo = 1;
         Credito credito = credito1;
         credito.setDetalle("Auto");
-        boolean expResult = false;
-        boolean result = instance.actualizar(credito);
-        instance.actualizar(credito);
+        boolean expResult = true;
+        boolean result = instance.actualizar(codigo, credito);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    
+    /**
+     * Test of actualizar method, of class CreditoController.
+     */
+    @Test
+    public void testActualizar1() {
+        System.out.println("actualizar");
+        instance.crear(credito1);
+        int codigo = 1;
+        Credito credito = credito1;
+        credito.setDetalle("Auto");
+        boolean expResult = true;
+        boolean result = instance.actualizar(codigo, credito);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test of actualizar method, of class CreditoController.
+     */
+    @Test
+    public void testActualizar2() {
+        System.out.println("actualizar");
+        instance.crear(credito1);
+        int codigo = 1;
+        Credito credito = credito1;
+        credito.setDetalle("Auto");
+        boolean expResult = true;
+        boolean result = instance.actualizar(codigo, credito);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+
 
     /**
      * Test of getListCredito method, of class CreditoController.
@@ -147,7 +213,7 @@ public class CreditoControllerTest {
     @Test
     public void testSetListCredito() {
         System.out.println("setListCredito");
-        Set<Credito> listCredito = null;
+        List<Credito> listCredito = null;
         CreditoController instance = new CreditoController();
         instance.setListCredito(listCredito);
         // TODO review the generated test code and remove the default call to fail.

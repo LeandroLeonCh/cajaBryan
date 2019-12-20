@@ -140,7 +140,7 @@ public class TasaInteresControllerTest {
         System.out.println("eliminar");
         instance.crear(tasaInteres1);
         int codigo = 1;
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.eliminar(codigo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -153,7 +153,7 @@ public class TasaInteresControllerTest {
     @Test
     public void testEliminar1() {
         System.out.println("eliminar");
-        instance.crear(tasaInteres1);
+        //instance.crear(tasaInteres1);
         int codigo = 1;
         boolean expResult = false;
         boolean result = instance.eliminar(codigo);
@@ -168,7 +168,7 @@ public class TasaInteresControllerTest {
     @Test
     public void testEliminar2() {
         System.out.println("eliminar");
-        instance.crear(tasaInteres1);
+        //instance.crear(tasaInteres1);
         int codigo = 1;
         boolean expResult = false;
         boolean result = instance.eliminar(codigo);
@@ -187,7 +187,7 @@ public class TasaInteresControllerTest {
         int codigo = 1;
         TasaInteres tasaInteres = tasaInteres1;
         tasaInteres.setPorcentaje(0.10);
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.actualizar(codigo, tasaInteres);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -204,7 +204,7 @@ public class TasaInteresControllerTest {
         int codigo = 1;
         TasaInteres tasaInteres = tasaInteres1;
         tasaInteres.setPorcentaje(0.10);
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.actualizar(codigo, tasaInteres);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -221,7 +221,7 @@ public class TasaInteresControllerTest {
         int codigo = 1;
         TasaInteres tasaInteres = tasaInteres1;
         tasaInteres.setPorcentaje(0.10);
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.actualizar(codigo, tasaInteres);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

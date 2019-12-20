@@ -147,7 +147,7 @@ public class SolicitudCreditoControllerTest {
         System.out.println("eliminar");
         instance.crear(solicitud1);
         int codigo = 1;
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.eliminar(codigo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -160,7 +160,7 @@ public class SolicitudCreditoControllerTest {
     @Test
     public void testEliminar1() {
         System.out.println("eliminar");
-        instance.crear(solicitud1);
+        //instance.crear(solicitud1);
         int codigo = 1;
         boolean expResult = false;
         boolean result = instance.eliminar(codigo);
@@ -175,7 +175,7 @@ public class SolicitudCreditoControllerTest {
     @Test
     public void testEliminar2() {
         System.out.println("eliminar");
-        instance.crear(solicitud1);
+        //instance.crear(solicitud1);
         int codigo = 1;
         boolean expResult = false;
         boolean result = instance.eliminar(codigo);
@@ -194,7 +194,7 @@ public class SolicitudCreditoControllerTest {
         int codigo = 1;
         SolicitudCredito solicitudCredito = solicitud1;
         solicitudCredito.setEstado("Aprobado");
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.actualizar(codigo, solicitudCredito);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -211,7 +211,7 @@ public class SolicitudCreditoControllerTest {
         int codigo = 1;
         SolicitudCredito solicitudCredito = solicitud1;
         solicitudCredito.setEstado("Aprobado");
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.actualizar(codigo, solicitudCredito);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -228,7 +228,7 @@ public class SolicitudCreditoControllerTest {
         int codigo = 1;
         SolicitudCredito solicitudCredito = solicitud1;
         solicitudCredito.setEstado("Aprobado");
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.actualizar(codigo, solicitudCredito);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

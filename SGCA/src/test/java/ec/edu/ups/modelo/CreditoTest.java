@@ -8,7 +8,9 @@ package ec.edu.ups.modelo;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
@@ -27,6 +29,8 @@ public class CreditoTest {
     private Credito credito;
     private Socio socio;
     private TasaInteres tasaInteres;
+    private DetalleCredito detalleCredito;
+    private List<DetalleCredito> listaDetalleCredito;
     
     public CreditoTest() {
     }
@@ -41,17 +45,21 @@ public class CreditoTest {
     
     @Before
     public void setUp() throws ParseException{
+        listaDetalleCredito = new ArrayList<>();
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un fomato de fecha
         Date fechaInicio = format.parse("01/01/2018");
         System.out.println(fechaInicio);
         Date fechaFin = format.parse("01/01/2019");
         Date fechaN = format.parse("20/04/1994");
         Date fechaI = format.parse("10/01/2016");
+        Date fechaP = format.parse("10/01/2016");
+        Date fechaC = format.parse("29/01/2016");
         
         socio = new Socio(1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja", "Activo", fechaI, 12.666);
         tasaInteres = new TasaInteres(1, "Tasa 1", "2019", 0.40);
-        
-        credito = new Credito(1, "Casa", fechaInicio, fechaFin, 100.99, 365, socio, tasaInteres ,null);
+        detalleCredito = new DetalleCredito(1, 1000.0, fechaP, 200.0, 100.0, fechaC, 0.0, 1, 0, 900.0);
+        listaDetalleCredito.add(detalleCredito);
+        credito = new Credito(1, "Casa", fechaInicio, fechaFin, 100.99, 365, socio, tasaInteres , listaDetalleCredito);
     }
     
     @After
@@ -286,8 +294,17 @@ public class CreditoTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        String expResult = "Credito{codigo=1, detalle=Casa, fechaInicio=Mon Jan 01 00:01:00 COT 2018, fechaFin=Tue Jan 01 00:01:00 COT 2019, monto=100.99, tiempo=365, tipoEntrega=100.0, socio=Socio{estado=Activo, fechaIngreso=Sun Jan 10 00:01:00 COT 2016, monto=12.666}, tasaInteres=TasaInteres{codigo=1, nombre=Tasa 1, periodo=2019, porcentaje=0.4}}";
+        String expResult = "Credito{codigo=1, "
+                + "detalle=Casa, "
+                + "fechaInicio=Mon Jan 01 00:01:00 COT 2018, "
+                + "fechaFin=Tue Jan 01 00:01:00 COT 2019, "
+                + "monto=100.99, "
+                + "tiempo=365, "
+                + "socio=Socio{estado=Activo, fechaIngreso=Sun Jan 10 00:01:00 COT 2016, monto=12.666}, "
+                + "tasaInteres=TasaInteres{codigo=1, nombre=Tasa 1, periodo=2019, porcentaje=0.4}, "
+                + "detalleCredito=[DetalleCredito{codigo=1, capital=1000.0, fechaPago=Sun Jan 10 00:01:00 COT 2016, interes=200.0, cuota=100.0, fechaCaducidad=Fri Jan 29 00:01:00 COT 2016, montoMora=0.0, numeroCuota=1, numeroDiasMora=0, saldoCapital=900.0}]}";
         String result = credito.toString();
+        System.out.println(credito.toString());
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
