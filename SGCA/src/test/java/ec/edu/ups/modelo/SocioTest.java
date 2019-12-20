@@ -61,7 +61,7 @@ public class SocioTest {
         String result = s1.getEstado();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -74,7 +74,7 @@ public class SocioTest {
         Socio instance = new Socio();
         instance.setEstado(estado);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -90,7 +90,7 @@ public class SocioTest {
         } catch (ParseException ex) {
             Logger.getLogger(PersonaTest.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Date result = s1.getpFechaNacimiento();
+        Date result = s1.getFechaIngreso();
         System.out.println("result " + result);
         assertEquals(expResult, result);
     }
@@ -105,7 +105,7 @@ public class SocioTest {
         Socio instance = new Socio();
         instance.setFechaIngreso(fechaIngreso);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -118,7 +118,7 @@ public class SocioTest {
         double result = s1.getMonto();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -131,7 +131,17 @@ public class SocioTest {
         Socio instance = new Socio();
         instance.setMonto(monto);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testToString() {
+        System.out.println("toString");
+        String expResult = "Socio{estado=Activo, fechaIngreso=Sun Jan 10 00:01:00 COT 2016, monto=12.666}";
+        String result = s1.toString();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
     }
     
 }
