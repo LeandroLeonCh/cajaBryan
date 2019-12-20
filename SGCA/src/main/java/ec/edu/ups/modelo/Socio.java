@@ -51,4 +51,10 @@ public class Socio extends Persona {
         this.monto = monto;
     }
 
+    @Override
+    public String toString() {
+        return "Socio{" + "estado=" + estado + ", fechaIngreso=" + fechaIngreso + ", monto=" + monto + '}';
+    }
+
+    
 }
