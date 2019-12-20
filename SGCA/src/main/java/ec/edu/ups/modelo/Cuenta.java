@@ -74,7 +74,4 @@ public class Cuenta {
     public String toString() {
         return "Cuenta{" + "codigo=" + codigo + ", numeroCuenta=" + numeroCuenta + ", fechaRegistro=" + fechaRegistro + ", estado=" + estado + ", socio=" + socio + '}';
     }
-    
-    
-    
 }
