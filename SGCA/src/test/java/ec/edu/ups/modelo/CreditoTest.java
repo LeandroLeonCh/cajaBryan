@@ -51,7 +51,7 @@ public class CreditoTest {
         socio = new Socio(1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja", "Activo", fechaI, 12.666);
         tasaInteres = new TasaInteres(1, "Tasa 1", "2019", 0.40);
         
-        credito = new Credito(1, "Casa", fechaInicio, fechaFin, 100.99, 365, 100.00, socio, tasaInteres );
+        credito = new Credito(1, "Casa", fechaInicio, fechaFin, 100.99, 365, socio, tasaInteres ,null);
     }
     
     @After
@@ -224,32 +224,6 @@ public class CreditoTest {
         int tiempo = 0;
         Credito instance = new Credito();
         instance.setTiempo(tiempo);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getTipoEntrega method, of class Credito.
-     */
-    @Test
-    public void testGetTipoEntrega() {
-        System.out.println("getTipoEntrega");
-        Double expResult = 100.00;
-        Double result = credito.getTipoEntrega();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setTipoEntrega method, of class Credito.
-     */
-    @Test
-    public void testSetTipoEntrega() {
-        System.out.println("setTipoEntrega");
-        Double tipoEntrega = null;
-        Credito instance = new Credito();
-        instance.setTipoEntrega(tipoEntrega);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
