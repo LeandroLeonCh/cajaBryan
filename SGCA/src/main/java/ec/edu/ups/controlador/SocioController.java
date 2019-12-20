@@ -29,33 +29,39 @@ public class SocioController {
         this.socioList = socioList;
     }
 
-    public void crear(Socio socio) {
+    public void crearSocio(Socio socio) {
         socioList.add(socio);
     }
 
-    public Socio buscar(int codigo) {
+    public Socio buscarSocio(String cedula) {
         for (Socio socio : socioList) {
-            if (socio.getpCodigo() == codigo) {
+            if (socio.getpCedula().equals(cedula)) {
                 return socio;
             }
         }
         return null;
     }
 
-    public boolean eliminar(int codigo) {
-        Socio socio = buscar(codigo);
-        if (socio != null) {
-            return socioList.remove(socio);
+    public boolean eliminarSocio(String cedula) {
+        for (int i = 0; i < socioList.size(); i++) {
+            Socio s = socioList.get(i);
+            if (s.getpCedula().equals(cedula)) {
+                socioList.remove(i);
+                return true;
+            }
         }
         return false;
     }
 
-    public void actualizar(Socio socio) {
+    public boolean actualizarSocio(String cedula, Socio socio) {
         for (int i = 0; i < socioList.size(); i++) {
             Socio s = socioList.get(i);
-            if (socio.getpCodigo() == s.getpCodigo()) {
-                socioList.set(i, s);
+            if (s.getpCedula().equals(cedula)) {
+                socioList.set(i, socio);
+                return true;
             }
         }
+        return false;
     }
+    
 }

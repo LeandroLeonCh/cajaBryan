@@ -20,7 +20,7 @@ public class Socio extends Persona {
     public Socio() {
     }
 
-    public Socio(String estado, Date fechaIngreso, double monto, int pCodigo, String pCedula, String pNombre, String pApellido, Date pFechaNacimiento, String pTelefono, String pDireccion) {
+    public Socio(int pCodigo, String pCedula, String pNombre, String pApellido, Date pFechaNacimiento, String pTelefono, String pDireccion, String estado, Date fechaIngreso, double monto) {
         super(pCodigo, pCedula, pNombre, pApellido, pFechaNacimiento, pTelefono, pDireccion);
         this.estado = estado;
         this.fechaIngreso = fechaIngreso;
@@ -55,5 +55,5 @@ public class Socio extends Persona {
     public String toString() {
         return "Socio{" + "estado=" + estado + ", fechaIngreso=" + fechaIngreso + ", monto=" + monto + '}';
     }
-    
+
 }

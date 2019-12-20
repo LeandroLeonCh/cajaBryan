@@ -23,34 +23,35 @@ import static org.junit.Assert.*;
  * @author USER
  */
 public class CuentaTest {
-    
+
     private Cuenta cuenta;
     private Socio socio;
+
     public CuentaTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
-    public void setUp() throws ParseException{
+    public void setUp() throws ParseException {
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un fomato de fecha
         Date fecha = format.parse("25/07/2017");
         System.out.println(fecha);
         Date fechaN = format.parse("20/04/1994");
         System.err.println(fechaN);
         Date fechaI = format.parse("10/01/2016");
-        System.err.println(fechaI);     
-        socio = new Socio("Activo", fechaI, 12.666, 1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja" );
-        cuenta = new Cuenta(1, "789654321" , fecha, "Activo",socio);
-        
+        System.err.println(fechaI);
+        socio = new Socio(1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja", "Activo", fechaI, 12.666);
+        cuenta = new Cuenta(1, "789654321", fecha, "Activo", socio);
+
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -191,14 +192,14 @@ public class CuentaTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
-        /**
+
+    /**
      * Test of ToString method, of class Cuenta.
      */
     @Test
     public void testToString() {
         System.out.println("toString");
-        String expResult = "Cuenta{codigo=1, numeroCuenta=789654321, fechaRegistro=Wed Jan 25 00:07:00 COT 2017, estado=Activo, socio=Socio{estado=Activo, fechaIngreso=Sun Jan 10 00:01:00 COT 2016, monto=12.666}}"; 
+        String expResult = "Cuenta{codigo=1, numeroCuenta=789654321, fechaRegistro=Wed Jan 25 00:07:00 COT 2017, estado=Activo, socio=Socio{estado=Activo, fechaIngreso=Sun Jan 10 00:01:00 COT 2016, monto=12.666}}";
 
         String result = cuenta.toString();
         System.out.println(cuenta.toString());
@@ -206,5 +207,5 @@ public class CuentaTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
 }

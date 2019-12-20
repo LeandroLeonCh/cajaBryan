@@ -23,30 +23,30 @@ import static org.junit.Assert.*;
  * @author USER
  */
 public class SocioTest {
-    
+
     private Socio socio;
-    
+
     public SocioTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
-    public void setUp() throws ParseException{
+    public void setUp() throws ParseException {
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy");// Creamos un formato de fecha
         Date fechaN = format.parse("20/04/1994");
         System.err.println(fechaN);
         Date fechaI = format.parse("10/01/2016");
         System.err.println(fechaI);
-        socio = new Socio("Activo", fechaI, 12.666, 1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja" );
+        socio = new Socio(1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja", "Activo", fechaI, 12.666);
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -133,7 +133,7 @@ public class SocioTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
     @Test
     public void testToString() {
         System.out.println("toString");
@@ -143,5 +143,5 @@ public class SocioTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
 }

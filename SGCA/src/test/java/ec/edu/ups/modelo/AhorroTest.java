@@ -25,43 +25,43 @@ import static org.junit.Assert.*;
  * @author USER
  */
 public class AhorroTest {
-    
+
     private Ahorro ahorro;
     private Socio socio;
     private TasaInteres tasaInteres;
     private DetalleAhorro detalleAhorro;
     //private DetalleAhorro detalleAhorro2;
     private List<DetalleAhorro> listaDetalleAhorro;
-    
+
     public AhorroTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
-    public void setUp() throws ParseException{
+    public void setUp() throws ParseException {
         listaDetalleAhorro = new ArrayList<>();
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un fomato de fecha
         Date fecha = format.parse("25/07/2017");
         Date fechaN = format.parse("20/04/1994");
         Date fechaI = format.parse("10/01/2016");
         Date fechaP = format.parse("11/01/2016");
-        
-        detalleAhorro = new DetalleAhorro(1, fechaP, 0.02, 100.0 );
+
+        detalleAhorro = new DetalleAhorro(1, fechaP, 0.02, 100.0);
         listaDetalleAhorro.add(detalleAhorro);
-        socio = new Socio("Activo", fechaI, 12.666, 1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja" );
+        socio = new Socio(1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja", "Activo", fechaI, 12.666);
         tasaInteres = new TasaInteres(1, "Tasa 1", "2019", 0.40);
-        
+
         ahorro = new Ahorro(1, "Activo", fecha, 769.78, socio, tasaInteres, listaDetalleAhorro);
-        System.out.println(ahorro+"este es el sout de ahorro");
+        System.out.println(ahorro + "este es el sout de ahorro");
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -267,6 +267,5 @@ public class AhorroTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
-}
 
+}
