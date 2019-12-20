@@ -60,5 +60,14 @@ public class Empleado extends Persona {
     public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
     }
+    
+    
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "cargo=" + cargo + ", estado=" + estado + ", fechaIngreso=" + fechaIngreso + ", sueldo=" + sueldo + '}';
+    }
+    
+    
 
 }

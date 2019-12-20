@@ -69,7 +69,9 @@ public class Cuenta {
     public void setSocio(Socio socio) {
         this.socio = socio;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Cuenta{" + "codigo=" + codigo + ", numeroCuenta=" + numeroCuenta + ", fechaRegistro=" + fechaRegistro + ", estado=" + estado + ", socio=" + socio + '}';
+    }
 }
