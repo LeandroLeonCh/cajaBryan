@@ -124,5 +124,7 @@ public class DetalleCredito {
     public String toString() {
         return "DetalleCredito{" + "codigo=" + codigo + ", capital=" + capital + ", fechaPago=" + fechaPago + ", interes=" + interes + ", cuota=" + cuota + ", fechaCaducidad=" + fechaCaducidad + ", montoMora=" + montoMora + ", numeroCuota=" + numeroCuota + ", numeroDiasMora=" + numeroDiasMora + ", saldoCapital=" + saldoCapital + '}';
     }
+    
+    
 
 }
