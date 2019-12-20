@@ -6,8 +6,8 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.modelo.Ahorro;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,15 +15,18 @@ import java.util.Set;
  */
 public class AhorroController {
 
-    private Set<Ahorro> ListaAhorro;
+    private List<Ahorro> ahorroList;
+
+    public AhorroController() {
+        ahorroList = new ArrayList<>();
+    }
 
     public void crear(Ahorro ahorro) {
-        ahorro.setCodigo(ListaAhorro.size() + 1);
-        ListaAhorro.add(ahorro);
+        ahorroList.add(ahorro);
     }
 
     public Ahorro buscar(int codigo) {
-        for (Ahorro ahorro : ListaAhorro) {
+        for (Ahorro ahorro : ahorroList) {
             if (ahorro.getCodigo() == codigo) {
                 return ahorro;
             }
@@ -34,27 +37,27 @@ public class AhorroController {
     public boolean eliminar(int codigo) {
         Ahorro ahorro = buscar(codigo);
         if (ahorro != null) {
-            return ListaAhorro.remove(ahorro);
+            return ahorroList.remove(ahorro);
         }
         return false;
     }
 
-    public void actualizar(Ahorro ahorro) {
-        for (Iterator<Ahorro> iterator = ListaAhorro.iterator(); iterator.hasNext();) {
-            Ahorro a = iterator.next();
+    public boolean actualizar(Ahorro ahorro) {
+        for (int i = 0; i < ahorroList.size(); i++) {
+            Ahorro a = ahorroList.get(i);
             if (ahorro.getCodigo() == a.getCodigo()) {
-                ListaAhorro.remove(ahorro);
-                ListaAhorro.add(a);
+                ahorroList.set(i, a);
+                return true;
             }
         }
-
+        return false;
     }
 
-    public Set<Ahorro> getListaAhorro() {
-        return ListaAhorro;
+    public List<Ahorro> getAhorroList() {
+        return ahorroList;
     }
 
-    public void setListaAhorro(Set<Ahorro> ListaAhorro) {
-        this.ListaAhorro = ListaAhorro;
+    public void setAhorroList(List<Ahorro> ahorroList) {
+        this.ahorroList = ahorroList;
     }
 }
