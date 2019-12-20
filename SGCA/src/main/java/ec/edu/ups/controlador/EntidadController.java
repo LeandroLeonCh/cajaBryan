@@ -6,8 +6,8 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.modelo.Entidad;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,15 +15,18 @@ import java.util.Set;
  */
 public class EntidadController {
 
-    private Set<Entidad> ListaEntidad;
+    private List<Entidad> entidadList;
+
+    public EntidadController() {
+        entidadList = new ArrayList<>();
+    }
 
     public void crear(Entidad entidad) {
-        entidad.setCodigo(ListaEntidad.size() + 1);
-        ListaEntidad.add(entidad);
+        entidadList.add(entidad);
     }
 
     public Entidad buscar(int codigo) {
-        for (Entidad entidad : ListaEntidad) {
+        for (Entidad entidad : entidadList) {
             if (entidad.getCodigo() == codigo) {
                 return entidad;
             }
@@ -34,27 +37,27 @@ public class EntidadController {
     public boolean eliminar(int codigo) {
         Entidad entidad = buscar(codigo);
         if (entidad != null) {
-            return ListaEntidad.remove(entidad);
+            return entidadList.remove(entidad);
         }
         return false;
     }
 
-    public void actualizar(Entidad entidad) {
-        for (Iterator<Entidad> iterator = ListaEntidad.iterator(); iterator.hasNext();) {
-            Entidad a = iterator.next();
+    public boolean actualizar(Entidad entidad) {
+        for (int i = 0; i < entidadList.size(); i++) {
+            Entidad a = entidadList.get(i);
             if (entidad.getCodigo() == a.getCodigo()) {
-                ListaEntidad.remove(entidad);
-                ListaEntidad.add(a);
+                entidadList.set(i, entidad);
+                return true;
             }
         }
-
+        return false;
     }
 
-    public Set<Entidad> getListaEntidad() {
-        return ListaEntidad;
+    public List<Entidad> getEntidadList() {
+        return entidadList;
     }
 
-    public void setListaEntidad(Set<Entidad> ListaEntidad) {
-        this.ListaEntidad = ListaEntidad;
+    public void setEntidadList(List<Entidad> entidadList) {
+        this.entidadList = entidadList;
     }
 }
