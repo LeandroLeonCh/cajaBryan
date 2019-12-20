@@ -160,7 +160,7 @@ public class PersonaControllerTest {
      * Test of actualizarPersona method, of class PersonaController.
      */
     @Test
-    public void testActualizarPersona2() {
+    public void testActualizarPersona1() {
         System.out.println("actualizarPersona");
         instance.crearPersona(persona1);
         String cedula = "0706148509";
@@ -178,7 +178,7 @@ public class PersonaControllerTest {
      * Test of actualizarPersona method, of class PersonaController.
      */
     @Test
-    public void testActualizarPersona3() {
+    public void testActualizarPersona2() {
         System.out.println("actualizarPersona");
         String cedula = "0706148509";
         Persona persona = persona1;
@@ -215,7 +215,6 @@ public class PersonaControllerTest {
         String cedula = "0706148509";
         Boolean expResult = false;
         Boolean result = instance.borrarPersona(cedula);
-        System.out.println(result);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
