@@ -13,7 +13,7 @@ public class Usuario {
 
     private int codigo;
     private String nombre;
-    private String clase;
+    private String clave;
     private String estado;
     private String rol;
     private Empleado empleado;
@@ -24,7 +24,7 @@ public class Usuario {
     public Usuario(int codigo, String nombre, String clase, String estado, String rol, Empleado empleado) {
         this.codigo = codigo;
         this.nombre = nombre;
-        this.clase = clase;
+        this.clave = clase;
         this.estado = estado;
         this.rol = rol;
         this.empleado = empleado;
@@ -47,11 +47,11 @@ public class Usuario {
     }
 
     public String getClase() {
-        return clase;
+        return clave;
     }
 
     public void setClase(String clase) {
-        this.clase = clase;
+        this.clave = clase;
     }
 
     public String getEstado() {
