@@ -6,8 +6,8 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.modelo.Agencia;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,15 +15,26 @@ import java.util.Set;
  */
 public class AgenciaController {
 
-    private Set<Agencia> ListaAgencia;
+    private List<Agencia> agenciaList;
 
-    public void crear(Agencia agencia) {
-        agencia.setCodigo(ListaAgencia.size() + 1);
-        ListaAgencia.add(agencia);
+    public AgenciaController() {
+        agenciaList = new ArrayList<>();
     }
 
-    public Agencia buscar(int codigo) {
-        for (Agencia agencia : ListaAgencia) {
+    public List<Agencia> getAgenciaList() {
+        return agenciaList;
+    }
+
+    public void setAgenciaList(List<Agencia> agenciaList) {
+        this.agenciaList = agenciaList;
+    }
+
+    public void crearAgencia(Agencia agencia) {
+        agenciaList.add(agencia);
+    }
+
+    public Agencia buscarAgencia(int codigo) {
+        for (Agencia agencia : agenciaList) {
             if (agencia.getCodigo() == codigo) {
                 return agencia;
             }
@@ -31,30 +42,25 @@ public class AgenciaController {
         return null;
     }
 
-    public boolean eliminar(int codigo) {
-        Agencia agencia = buscar(codigo);
-        if (agencia != null) {
-            return ListaAgencia.remove(agencia);
+    public boolean eliminarAgencia(int codigo) {
+        for (int i = 0; i < agenciaList.size(); i++) {
+            Agencia s = agenciaList.get(i);
+            if (s.getCodigo() == codigo) {
+                agenciaList.remove(i);
+                return true;
+            }
         }
         return false;
     }
 
-    public void actualizar(Agencia agencia) {
-        for (Iterator<Agencia> iterator = ListaAgencia.iterator(); iterator.hasNext();) {
-            Agencia a = iterator.next();
-            if (agencia.getCodigo() == a.getCodigo()) {
-                ListaAgencia.remove(agencia);
-                ListaAgencia.add(a);
+    public boolean actualizarAgencia(int codigo, Agencia agencia) {
+        for (int i = 0; i < agenciaList.size(); i++) {
+            Agencia s = agenciaList.get(i);
+            if (s.getCodigo() == codigo) {
+                agenciaList.set(i, agencia);
+                return true;
             }
         }
-
-    }
-
-    public Set<Agencia> getListaAgencia() {
-        return ListaAgencia;
-    }
-
-    public void setListaAgencia(Set<Agencia> ListaAgencia) {
-        this.ListaAgencia = ListaAgencia;
+        return false;
     }
 }
