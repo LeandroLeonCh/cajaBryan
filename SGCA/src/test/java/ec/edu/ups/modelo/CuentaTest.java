@@ -192,4 +192,13 @@ public class CuentaTest {
         //fail("The test case is a prototype.");
     }
     
+    public void testToString() {
+        System.out.println("toString");
+        String expResult = "Cuenta{codigo=1, numeroCuenta=789654321, fechaRegistro=Wed Jan 25 00:07:00 COT 2017, socio=s1}";
+        String result = c1.toString();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
 }
