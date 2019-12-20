@@ -6,7 +6,9 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.modelo.Credito;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -15,10 +17,21 @@ import java.util.Set;
  */
 public class CreditoController {
 
-    private Set<Credito> listCredito;
+    private List<Credito> listCredito;
+
+    public List<Credito> getListCredito() {
+        return listCredito;
+    }
+
+    public void setListCredito(List<Credito> listCredito) {
+        this.listCredito = listCredito;
+    }
+
+    public CreditoController() {
+        listCredito = new ArrayList<>();
+    }
 
     public void crear(Credito credito) {
-        credito.setCodigo(listCredito.size() + 1);
         listCredito.add(credito);
     }
 
@@ -32,31 +45,25 @@ public class CreditoController {
     }
 
     public boolean eliminar(int codigo) {
-        Credito credito = buscar(codigo);
-        if (credito != null) {
-            return listCredito.remove(credito);
-        }
-        return false;
-    }
-
-    public boolean actualizar(Credito credito) {
-        for (Iterator<Credito> iterator = listCredito.iterator(); iterator.hasNext();) {
-            Credito nuevoCredito = iterator.next();
-            if (credito.getCodigo() == nuevoCredito.getCodigo()) {
-                listCredito.remove(credito);
-                listCredito.add(nuevoCredito);
+        for (int i = 0; i < listCredito.size(); i++) {
+            Credito cre = listCredito.get(i);
+            if (cre.getCodigo() == codigo) {
+                listCredito.remove(i);
                 return true;
             }
         }
         return false;
     }
 
-    public Set<Credito> getListCredito() {
-        return listCredito;
-    }
-
-    public void setListCredito(Set<Credito> listCredito) {
-        this.listCredito = listCredito;
+    public boolean actualizar(int codigo, Credito credito) {
+       for (int i = 0; i < listCredito.size(); i++) {
+            Credito cre = listCredito.get(i);
+            if (cre.getCodigo() == credito.getCodigo()) {
+                listCredito.set(i, credito);
+                return true;
+            }
+        }
+        return false;
     }
 
 }
