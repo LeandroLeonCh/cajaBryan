@@ -55,14 +55,14 @@ public class CuentaController {
         return false;
     }
 
-    public void actualizarCuenta(int codigo, Cuenta cuenta) {
+    public boolean actualizarCuenta(int codigo, Cuenta cuenta) {
         for(int i = 0; i < cuentaList.size(); i++){
             Cuenta c = cuentaList.get(i);
             if(c.getCodigo() == codigo){
                 cuentaList.set(i, cuenta);
-                return;
+                return true;
             }
         }
-        return;
+        return false;
     }  
 }
