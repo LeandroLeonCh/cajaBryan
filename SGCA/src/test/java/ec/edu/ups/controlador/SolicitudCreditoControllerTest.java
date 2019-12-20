@@ -26,6 +26,7 @@ import static org.junit.Assert.*;
 public class SolicitudCreditoControllerTest {
     
     SolicitudCredito solicitud1 = null;
+    SolicitudCredito solicitud2 = null;
     SolicitudCreditoController instance = null;
     
     public SolicitudCreditoControllerTest() {
@@ -44,7 +45,9 @@ public class SolicitudCreditoControllerTest {
         instance = new SolicitudCreditoController();
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un formato de fecha
         Date fecha = format.parse("17/01/2018");
-        solicitud1 = new SolicitudCredito(1, 300.0, "En proceso", fecha, "Cersar Vazquez", 1000.0, "Arriendo", "NOse");
+        Date fecha2 = format.parse("17/02/2018");
+        solicitud1 = new SolicitudCredito(1, 3000.0, "En proceso", fecha, "Cersar Vazquez", 1000.0, "Arriendo", "NOse");
+        solicitud2 = new SolicitudCredito(2, 2000.0, "En proceso", fecha2, "Mauricio Ortiz", 1000.0, "Arriendo", "NOse");
     }
     
     @After
@@ -86,6 +89,7 @@ public class SolicitudCreditoControllerTest {
     public void testCrear() {
         System.out.println("crear");
         instance.crear(solicitud1);
+        instance.crear(solicitud2);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

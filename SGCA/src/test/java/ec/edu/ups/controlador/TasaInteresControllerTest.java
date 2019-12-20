@@ -22,6 +22,7 @@ import static org.junit.Assert.*;
 public class TasaInteresControllerTest {
     
     TasaInteres tasaInteres1 = null;
+    TasaInteres tasaInteres2 = null;
     TasaInteresController instance = null;
     
     public TasaInteresControllerTest() {
@@ -39,6 +40,7 @@ public class TasaInteresControllerTest {
     public void setUp() {
         instance = new TasaInteresController();
         tasaInteres1 = new TasaInteres(1, "Plazo fijo", "mensual", 0.12);
+        tasaInteres2 = new TasaInteres(2, "Corriente", "anual", 0.15);
     }
     
     @After
@@ -80,6 +82,7 @@ public class TasaInteresControllerTest {
     public void testCrear() {
         System.out.println("crear");
         instance.crear(tasaInteres1);
+        instance.crear(tasaInteres2);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
