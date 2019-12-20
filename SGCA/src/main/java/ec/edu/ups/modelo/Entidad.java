@@ -70,4 +70,10 @@ public class Entidad {
         this.agenciaList = agenciaList;
     }
 
+    @Override
+    public String toString() {
+        return "Entidad{" + "codigo=" + codigo + ", nombreComercial=" + nombreComercial + ", razonSocial=" + razonSocial + ", ruc=" + ruc + ", agenciaList=" + agenciaList + '}';
+    }
+    
+    
 }
