@@ -21,7 +21,7 @@ public class Empleado extends Persona {
     public Empleado() {
     }
 
-    public Empleado(String cargo, String estado, Date fechaIngreso, double sueldo, int pCodigo, String pCedula, String pNombre, String pApellido, Date pFechaNacimiento, String pTelefono, String pDireccion) {
+    public Empleado(int pCodigo, String pCedula, String pNombre, String pApellido, Date pFechaNacimiento, String pTelefono, String pDireccion, String cargo, String estado, Date fechaIngreso, double sueldo) {
         super(pCodigo, pCedula, pNombre, pApellido, pFechaNacimiento, pTelefono, pDireccion);
         this.cargo = cargo;
         this.estado = estado;
@@ -60,14 +60,10 @@ public class Empleado extends Persona {
     public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
     }
-    
-    
 
     @Override
     public String toString() {
         return "Empleado{" + "cargo=" + cargo + ", estado=" + estado + ", fechaIngreso=" + fechaIngreso + ", sueldo=" + sueldo + '}';
     }
-    
-    
 
 }
