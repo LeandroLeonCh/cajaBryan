@@ -35,7 +35,6 @@ public class PersonaController {
 
     public Persona buscarPersona(String cedula) {
         for (Persona persona : personaList) {
-            System.out.println(persona);
             if (persona.getpCedula().equals(cedula)) {
                 return persona;
             }
@@ -43,20 +42,25 @@ public class PersonaController {
         return null;
     }
 
-    public void actualizarPersona(String cedula, Persona persona) {
+    public boolean actualizarPersona(String cedula, Persona persona) {
         for (int i = 0; i < personaList.size(); i++) {
             Persona p = personaList.get(i);
             if (p.getpCedula().equals(cedula)) {
                 personaList.set(i, persona);
+                return true;
             }
         }
+        return false;
     }
 
-    public void borrarPersona(String cedula) {
-        for (Persona persona : personaList) {
-            if (persona.getpCedula().equals(cedula)) {
-                personaList.remove(persona);
+    public boolean borrarPersona(String cedula) {
+        for (int i = 0; i < personaList.size(); i++) {
+            Persona p = personaList.get(i);
+            if (p.getpCedula().equals(cedula)) {
+                personaList.remove(i);
+                return true;
             }
         }
+        return false;
     }
 }
