@@ -55,6 +55,5 @@ public class Socio extends Persona {
     public String toString() {
         return "Socio{" + "estado=" + estado + ", fechaIngreso=" + fechaIngreso + ", monto=" + monto + '}';
     }
-
     
 }

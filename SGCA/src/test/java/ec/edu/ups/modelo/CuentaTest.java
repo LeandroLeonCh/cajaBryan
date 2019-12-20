@@ -192,10 +192,16 @@ public class CuentaTest {
         //fail("The test case is a prototype.");
     }
     
+        /**
+     * Test of ToString method, of class Cuenta.
+     */
+    @Test
     public void testToString() {
         System.out.println("toString");
-        String expResult = "Cuenta{codigo=1, numeroCuenta=789654321, fechaRegistro=Wed Jan 25 00:07:00 COT 2017, socio=socio}";
+        String expResult = "Cuenta{codigo=1, numeroCuenta=789654321, fechaRegistro=Wed Jan 25 00:07:00 COT 2017, estado=Activo, socio=Socio{estado=Activo, fechaIngreso=Sun Jan 10 00:01:00 COT 2016, monto=12.666}}"; 
+
         String result = cuenta.toString();
+        System.out.println(cuenta.toString());
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
