@@ -13,7 +13,7 @@ import java.util.Set;
  *
  * @author Starman
  */
-public class ControllerAhorro {
+public class AhorroController {
 
     private Set<Ahorro> ListaAhorro;
 
