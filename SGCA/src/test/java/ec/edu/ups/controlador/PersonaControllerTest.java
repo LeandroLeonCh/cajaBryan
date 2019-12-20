@@ -113,7 +113,7 @@ public class PersonaControllerTest {
      * Test of buscarPersona method, of class PersonaController.
      */
     @Test
-    public void testBuscarPersona2() {
+    public void testBuscarPersona1() {
         System.out.println("buscarPersona");
         instance.crearPersona(persona1);
         String cedula = "";
@@ -128,7 +128,7 @@ public class PersonaControllerTest {
      * Test of buscarPersona method, of class PersonaController.
      */
     @Test
-    public void testBuscarPersona3() {
+    public void testBuscarPersona2() {
         System.out.println("buscarPersona");
         String cedula = "";
         Persona expResult = null;
@@ -210,7 +210,7 @@ public class PersonaControllerTest {
      * Test of borrarPersona method, of class PersonaController.
      */
     @Test
-    public void testBorrarPersona2() {
+    public void testBorrarPersona1() {
         System.out.println("borrarPersona");
         String cedula = "0706148509";
         Boolean expResult = false;
@@ -224,7 +224,7 @@ public class PersonaControllerTest {
      * Test of borrarPersona method, of class PersonaController.
      */
     @Test
-    public void testBorrarPersona3() {
+    public void testBorrarPersona2() {
         System.out.println("borrarPersona");
         instance.crearPersona(persona1);
         String cedula = "0706148509";

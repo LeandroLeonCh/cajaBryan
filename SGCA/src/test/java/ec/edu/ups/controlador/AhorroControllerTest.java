@@ -49,7 +49,7 @@ public class AhorroControllerTest {
         AhorroController instance = new AhorroController();
         instance.crear(ahorro);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
     /**
@@ -64,7 +64,7 @@ public class AhorroControllerTest {
         Ahorro result = instance.buscar(codigo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
     /**
@@ -79,7 +79,7 @@ public class AhorroControllerTest {
         boolean result = instance.eliminar(codigo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -94,7 +94,7 @@ public class AhorroControllerTest {
         boolean result = instance.actualizar(ahorro);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -108,7 +108,7 @@ public class AhorroControllerTest {
         List<Ahorro> result = instance.getAhorroList();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
     /**
@@ -121,7 +121,7 @@ public class AhorroControllerTest {
         AhorroController instance = new AhorroController();
         instance.setAhorroList(ahorroList);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

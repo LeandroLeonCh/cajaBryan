@@ -21,11 +21,11 @@ public class DetalleAhorroController {
         detalleAhorroList = new ArrayList<>();
     }
 
-    public void crear(DetalleAhorro detalleAhorro) {
+    public void crearDetalleAhorro(DetalleAhorro detalleAhorro) {
         detalleAhorroList.add(detalleAhorro);
     }
 
-    public DetalleAhorro buscar(int codigo) {
+    public DetalleAhorro buscarDetalleAhorro(int codigo) {
         for (DetalleAhorro detalleAhorro : detalleAhorroList) {
             if (detalleAhorro.getCodigo() == codigo) {
                 return detalleAhorro;
@@ -34,8 +34,8 @@ public class DetalleAhorroController {
         return null;
     }
 
-    public boolean eliminar(int codigo) {
-        DetalleAhorro detalleAhorro = buscar(codigo);
+    public boolean eliminarDetalleAhorro(int codigo) {
+        DetalleAhorro detalleAhorro = buscarDetalleAhorro(codigo);
         if (detalleAhorro != null) {
             detalleAhorroList.remove(detalleAhorro);
             return true;
@@ -43,13 +43,15 @@ public class DetalleAhorroController {
         return false;
     }
 
-    public void actualizar(int codigo, DetalleAhorro detalleAhorro) {
+    public boolean actualizarDetalleAhorro(int codigo, DetalleAhorro detalleAhorro) {
         for (int i = 0; i < detalleAhorroList.size(); i++) {
             DetalleAhorro a = detalleAhorroList.get(i);
             if (codigo == a.getCodigo()) {
                 detalleAhorroList.set(i, detalleAhorro);
+                return true;
             }
         }
+        return false;
     }
 
     public List<DetalleAhorro> getDetalleAhorroList() {
