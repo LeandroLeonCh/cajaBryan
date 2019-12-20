@@ -104,5 +104,7 @@ public class SolicitudCredito {
     public String toString() {
         return "SolicitudCredito{" + "codigo=" + codigo + ", egresos=" + egresos + ", estado=" + estado + ", fechaRegistro=" + fechaRegistro + ", garantia=" + garantia + ", ingresos=" + ingresos + ", proposito=" + proposito + ", tipo=" + tipo + '}';
     }
+    
+    
 
 }
