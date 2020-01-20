@@ -93,6 +93,35 @@ public class CreditoControllerTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    
+        /**
+     * Test of buscar method, of class CreditoController.
+     */
+    @Test
+    public void testBuscar1() {
+        System.out.println("buscar");
+        instance.crear(credito1);
+        int codigo = 0;
+        Credito expResult = null;
+        Credito result = instance.buscar(codigo);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+        /**
+     * Test of buscar method, of class CreditoController.
+     */
+    @Test
+    public void testBuscar2() {
+        System.out.println("buscar");
+        int codigo = 0;
+        Credito expResult = null;
+        Credito result = instance.buscar(codigo);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
 
     /**
      * Test of eliminar method, of class CreditoController.
@@ -115,9 +144,9 @@ public class CreditoControllerTest {
     @Test
     public void testEliminar1() {
         System.out.println("eliminar");
-        //instance.crear(credito1);
-        int codigo = 1;
-        boolean expResult = false;
+        instance.crear(credito2);
+        int codigo = 2;
+        boolean expResult = true;
         boolean result = instance.eliminar(codigo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -130,8 +159,7 @@ public class CreditoControllerTest {
     @Test
     public void testEliminar2() {
         System.out.println("eliminar");
-        //instance.crear(credito1);
-        int codigo = 1;
+        int codigo = 2;
         boolean expResult = false;
         boolean result = instance.eliminar(codigo);
         assertEquals(expResult, result);
@@ -163,11 +191,12 @@ public class CreditoControllerTest {
     public void testActualizar1() {
         System.out.println("actualizar");
         instance.crear(credito1);
-        int codigo = 1;
+        int codigo = 2;
         Credito credito = credito1;
         credito.setDetalle("Auto");
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.actualizar(codigo, credito);
+        System.out.println(result);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -179,11 +208,10 @@ public class CreditoControllerTest {
     @Test
     public void testActualizar2() {
         System.out.println("actualizar");
-        instance.crear(credito1);
-        int codigo = 1;
+        int codigo =2;
         Credito credito = credito1;
         credito.setDetalle("Auto");
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.actualizar(codigo, credito);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -206,18 +234,18 @@ public class CreditoControllerTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of setListCredito method, of class CreditoController.
+    
+        /**
+     * Test of getListCredito method, of class CreditoController.
      */
     @Test
     public void testSetListCredito() {
         System.out.println("setListCredito");
-        List<Credito> listCredito = null;
+        List<Credito> ahorroList = null;
         CreditoController instance = new CreditoController();
-        instance.setListCredito(listCredito);
+        instance.setListCredito(ahorroList);
+
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
 }

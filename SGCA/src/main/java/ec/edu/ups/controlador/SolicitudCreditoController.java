@@ -4,12 +4,9 @@
  * and open the template in the editor.
  */
 package ec.edu.ups.controlador;
-import ec.edu.ups.modelo.Credito;
 import ec.edu.ups.modelo.SolicitudCredito;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 /**
  *

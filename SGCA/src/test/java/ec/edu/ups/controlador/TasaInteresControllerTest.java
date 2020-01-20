@@ -109,8 +109,8 @@ public class TasaInteresControllerTest {
     public void testBuscar1() {
         System.out.println("buscar");
         instance.crear(tasaInteres1);
-        int codigo = 1;
-        TasaInteres expResult = tasaInteres1;
+        int codigo = 2;
+        TasaInteres expResult = null;
         TasaInteres result = instance.buscar(codigo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -123,9 +123,8 @@ public class TasaInteresControllerTest {
     @Test
     public void testBuscar2() {
         System.out.println("buscar");
-        instance.crear(tasaInteres1);
-        int codigo = 1;
-        TasaInteres expResult = tasaInteres1;
+        int codigo = 2;
+        TasaInteres expResult = null;
         TasaInteres result = instance.buscar(codigo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -201,10 +200,10 @@ public class TasaInteresControllerTest {
     public void testActualizar1() {
         System.out.println("actualizar");
         instance.crear(tasaInteres1);
-        int codigo = 1;
+        int codigo = 2;
         TasaInteres tasaInteres = tasaInteres1;
         tasaInteres.setPorcentaje(0.10);
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.actualizar(codigo, tasaInteres);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -217,11 +216,10 @@ public class TasaInteresControllerTest {
     @Test
     public void testActualizar2() {
         System.out.println("actualizar");
-        instance.crear(tasaInteres1);
-        int codigo = 1;
+        int codigo = 2;
         TasaInteres tasaInteres = tasaInteres1;
         tasaInteres.setPorcentaje(0.10);
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.actualizar(codigo, tasaInteres);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

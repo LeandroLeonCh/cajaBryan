@@ -24,22 +24,22 @@ import static org.junit.Assert.*;
  * @author ISMAEL
  */
 public class SolicitudCreditoControllerTest {
-    
+
     SolicitudCredito solicitud1 = null;
     SolicitudCredito solicitud2 = null;
     SolicitudCreditoController instance = null;
-    
+
     public SolicitudCreditoControllerTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() throws ParseException {
         instance = new SolicitudCreditoController();
@@ -49,13 +49,14 @@ public class SolicitudCreditoControllerTest {
         solicitud1 = new SolicitudCredito(1, 3000.0, "En proceso", fecha, "Cersar Vazquez", 1000.0, "Arriendo", "NOse");
         solicitud2 = new SolicitudCredito(2, 2000.0, "En proceso", fecha2, "Mauricio Ortiz", 1000.0, "Arriendo", "NOse");
     }
-    
+
     @After
     public void tearDown() {
     }
 
     /**
-     * Test of getListSolicitudCredito method, of class SolicitudCreditoController.
+     * Test of getListSolicitudCredito method, of class
+     * SolicitudCreditoController.
      */
     @Test
     public void testGetListSolicitudCredito() {
@@ -70,7 +71,8 @@ public class SolicitudCreditoControllerTest {
     }
 
     /**
-     * Test of setListSolicitudCredito method, of class SolicitudCreditoController.
+     * Test of setListSolicitudCredito method, of class
+     * SolicitudCreditoController.
      */
     @Test
     public void testSetListSolicitudCredito() {
@@ -108,7 +110,7 @@ public class SolicitudCreditoControllerTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
     /**
      * Test of buscar method, of class SolicitudCreditoController.
      */
@@ -116,14 +118,14 @@ public class SolicitudCreditoControllerTest {
     public void testBuscar1() {
         System.out.println("buscar");
         instance.crear(solicitud1);
-        int codigo = 1;
-        SolicitudCredito expResult = solicitud1;
+        int codigo = 2;
+        SolicitudCredito expResult = null;
         SolicitudCredito result = instance.buscar(codigo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
     /**
      * Test of buscar method, of class SolicitudCreditoController.
      */
@@ -131,8 +133,8 @@ public class SolicitudCreditoControllerTest {
     public void testBuscar2() {
         System.out.println("buscar");
         instance.crear(solicitud1);
-        int codigo = 1;
-        SolicitudCredito expResult = solicitud1;
+        int codigo = 2;
+        SolicitudCredito expResult = null;
         SolicitudCredito result = instance.buscar(codigo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -153,7 +155,7 @@ public class SolicitudCreditoControllerTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
     /**
      * Test of eliminar method, of class SolicitudCreditoController.
      */
@@ -168,7 +170,7 @@ public class SolicitudCreditoControllerTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
     /**
      * Test of eliminar method, of class SolicitudCreditoController.
      */
@@ -200,39 +202,39 @@ public class SolicitudCreditoControllerTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
-     /**
+
+    /**
      * Test of actualizar method, of class SolicitudCreditoController.
      */
     @Test
     public void testActualizar1() {
         System.out.println("actualizar");
         instance.crear(solicitud1);
-        int codigo = 1;
+        int codigo = 2;
         SolicitudCredito solicitudCredito = solicitud1;
         solicitudCredito.setEstado("Aprobado");
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.actualizar(codigo, solicitudCredito);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
-     /**
+
+    /**
      * Test of actualizar method, of class SolicitudCreditoController.
      */
     @Test
     public void testActualizar2() {
         System.out.println("actualizar");
         instance.crear(solicitud1);
-        int codigo = 1;
+        int codigo = 2;
         SolicitudCredito solicitudCredito = solicitud1;
         solicitudCredito.setEstado("Aprobado");
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.actualizar(codigo, solicitudCredito);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
 }

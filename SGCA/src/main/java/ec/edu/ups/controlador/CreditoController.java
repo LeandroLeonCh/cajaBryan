@@ -7,9 +7,7 @@ package ec.edu.ups.controlador;
 
 import ec.edu.ups.modelo.Credito;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 /**
  *
@@ -58,12 +56,11 @@ public class CreditoController {
     public boolean actualizar(int codigo, Credito credito) {
        for (int i = 0; i < listCredito.size(); i++) {
             Credito cre = listCredito.get(i);
-            if (cre.getCodigo() == credito.getCodigo()) {
+            if (cre.getCodigo() == codigo) {
                 listCredito.set(i, credito);
                 return true;
             }
         }
         return false;
     }
-
 }

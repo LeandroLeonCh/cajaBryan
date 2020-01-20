@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Herramienta/src"/>
+	<classpathentry kind="src" path="SGCA/src/main/java"/>
+	<classpathentry kind="src" path="SGCA/src/test/java"/>
+	<classpathentry kind="lib" path="SGCA/target/SGCA-1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="SGCA/target/classes"/>
+</classpath>

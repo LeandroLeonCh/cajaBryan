@@ -20,31 +20,32 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+
 /**
  *
  * @author USER
  */
 public class CreditoTest {
-    
+
     private Credito credito;
     private Socio socio;
     private TasaInteres tasaInteres;
     private DetalleCredito detalleCredito;
     private List<DetalleCredito> listaDetalleCredito;
-    
+
     public CreditoTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
-    public void setUp() throws ParseException{
+    public void setUp() throws ParseException {
         listaDetalleCredito = new ArrayList<>();
         DateFormat format = new SimpleDateFormat("dd/mm/yyyy"); // Creamos un fomato de fecha
         Date fechaInicio = format.parse("01/01/2018");
@@ -54,14 +55,14 @@ public class CreditoTest {
         Date fechaI = format.parse("10/01/2016");
         Date fechaP = format.parse("10/01/2016");
         Date fechaC = format.parse("29/01/2016");
-        
+
         socio = new Socio(1, "0703021287", "Jordan", "Murillo", fechaN, "0980792708", "Av. Loja", "Activo", fechaI, 12.666);
         tasaInteres = new TasaInteres(1, "Tasa 1", "2019", 0.40);
         detalleCredito = new DetalleCredito(1, 1000.0, fechaP, 200.0, 100.0, fechaC, 0.0, 1, 0, 900.0);
         listaDetalleCredito.add(detalleCredito);
-        credito = new Credito(1, "Casa", fechaInicio, fechaFin, 100.99, 365, socio, tasaInteres , listaDetalleCredito);
+        credito = new Credito(1, "Casa", fechaInicio, fechaFin, 100.99, 365, socio, tasaInteres, listaDetalleCredito);
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -289,6 +290,31 @@ public class CreditoTest {
     }
 
     /**
+     * Test of setTasaInteres method, of class Credito.
+     */
+    @Test
+    public void testGetDetalleCredito() {
+        System.out.println("getDetalleCredito");
+        List<DetalleCredito> expResult = listaDetalleCredito;
+        List<DetalleCredito> result = credito.getDetalleCredito();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setTasaInteres method, of class Credito.
+     */
+    @Test
+    public void testSetDetalleCredito() {
+        System.out.println("setDetalleCredito");
+        List<DetalleCredito> detalleCredito = null;
+        DetalleCredito instance = new DetalleCredito();
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+
+    /**
      * Test of toString method, of class Credito.
      */
     @Test
@@ -309,5 +335,5 @@ public class CreditoTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
+
 }

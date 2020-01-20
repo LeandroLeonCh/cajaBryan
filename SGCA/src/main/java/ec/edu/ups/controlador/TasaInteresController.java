@@ -7,9 +7,7 @@ package ec.edu.ups.controlador;
 
 import ec.edu.ups.modelo.TasaInteres;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 /**
  *
@@ -65,6 +63,4 @@ public class TasaInteresController {
         }
         return false;
     }
-
-    
 }

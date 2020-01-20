@@ -108,10 +108,6 @@ public class Credito {
         return detalleCredito;
     }
 
-    public void setDetalleCredito(List<DetalleCredito> detalleCredito) {
-        this.detalleCredito = detalleCredito;
-    }
-
     @Override
     public String toString() {
         return "Credito{" + "codigo=" + codigo + ", detalle=" + detalle + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", monto=" + monto + ", tiempo=" + tiempo + ", socio=" + socio + ", tasaInteres=" + tasaInteres + ", detalleCredito=" + detalleCredito + '}';
